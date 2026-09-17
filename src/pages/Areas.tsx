@@ -20,6 +20,7 @@ import { channel, videos } from "../data/2doods";
 import { links } from "../data/links";
 import PartyArt, { PartyStrip } from "../components/PartyArt";
 import MotionAsset from "../components/MotionAsset";
+import TeamIdentity from "../components/TeamIdentity";
 const gameImages = [
   "persona-royal.jpg",
   "pokemon-white-screen.jpg",
@@ -332,54 +333,154 @@ export default function Areas({
           "Quatro esportes. Sempre alguma coisa acontecendo.",
         )}
         <div className="sports-grid">
-          {sports.map((s, i) =>
-            translateTree(
+          {sports.map((s) => {
+            const meta = s.sportMeta;
+            const variant = meta?.variant ?? "football";
+            const firstTeam = meta?.teams?.[0];
+            const secondTeam = meta?.teams?.[1];
+            const leagueTeams = [meta?.teams?.[3], meta?.teams?.[2]].filter(Boolean);
+            const sportLabel =
+              variant === "football"
+                ? "90 MIN / 11 × 11"
+                : variant === "basketball"
+                  ? "5 × 5 / COURT"
+                  : variant === "baseball"
+                    ? "9 INNINGS / 3 OUTS"
+                    : "GRID / TYRES / STRATEGY";
+            const indicator =
+              variant === "football"
+                ? "MATCHDAY / 00:00"
+                : variant === "basketball"
+                  ? "SHOT CLOCK / 24"
+                  : variant === "baseball"
+                    ? "INNING / 1"
+                    : "P 01 / TIMING";
+            const cta =
+              variant === "football"
+                ? "OPEN MATCHDAY →"
+                : variant === "basketball"
+                  ? "OPEN COURT →"
+                  : variant === "baseball"
+                    ? "OPEN BALLPARK →"
+                    : "OPEN PADDOCK →";
+
+            return translateTree(
               <button
                 key={s.id}
-                className={`sport-card sport-${s.sportMeta?.variant ?? i}`}
+                className={`sport-card sport-${variant}`}
                 onClick={() => open(s, true)}
+                aria-label={`Open ${s.name}`}
               >
-                <div className="scoreboard">
-                  <span>
-                    {s.sportMeta?.variant === "football"
-                      ? "MATCHDAY / 90 MIN / 11 × 11"
-                      : s.sportMeta?.variant === "basketball"
-                        ? "SCORE PANEL / 5 × 5 / POSSESSION"
-                        : s.sportMeta?.variant === "baseball"
-                          ? "LINEUP / 9 INNINGS / 3 OUTS"
-                          : "TIMING TOWER / GRID / PIT WALL"}
+                <div className="sport-card-head">
+                  <small>{sportLabel}</small>
+                  <span className="sport-micro-indicator">{indicator}</span>
+                </div>
+                <div className="sport-card-title-row">
+                  <div>
+                    <small className="sport-card-kicker">05 / STADIUM</small>
+                    <h2>{s.name}</h2>
+                  </div>
+                  <span className="sport-card-glyph" aria-hidden="true">
+                    {variant === "f1" ? <Flag size={25} /> : variant === "baseball" ? "Ⅸ" : variant === "football" ? <Disc3 size={25} /> : <Trophy size={25} />}
                   </span>
                 </div>
-                <div className="sport-symbol">
-                  {i === 3 ? (
-                    <Flag size={56} />
-                  ) : i === 0 ? (
-                    <Disc3 size={56} />
-                  ) : i === 1 ? (
-                    <Trophy size={56} />
-                  ) : (
-                    <span>Ⅸ</span>
-                  )}
-                </div>
-                <small>{s.subtitle}</small>
-                <h2>{s.name}</h2>
-                <div className="sport-card-identity">
-                  {(s.sportMeta?.teams ?? []).slice(0, 2).map((item) => (
-                    <span key={item.name}>
-                      <span className="team-mark team-mark-small" aria-hidden="true">
-                        {item.logo ? <img src={item.logo} alt="" width="24" height="24" /> : item.fallback}
-                      </span>
-                      {item.name}
-                    </span>
-                  ))}
-                </div>
-                {s.sportMeta?.sideAccount && (
-                  <span className="sport-side-label">{s.sportMeta.sideAccount.handle}</span>
+                <p className="sport-overview-copy">{meta?.overview}</p>
+
+                {variant === "football" && (
+                  <div className="sport-overview-grid">
+                    <div className="sport-overview-block">
+                      <small>TEAMS</small>
+                      <div className="sport-identity-list">
+                        {[firstTeam, secondTeam].filter(Boolean).map((item) => (
+                          <span className="sport-identity-item" key={item!.name}>
+                            <TeamIdentity team={item!} className="team-mark-small" />
+                            <span>{item!.name}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="sport-overview-block">
+                      <small>SEEN IRL</small>
+                      <span>BR / ES / AR / DE</span>
+                    </div>
+                  </div>
                 )}
-                <span className="sport-open">REGRAS & MINHA RELAÇÃO ↗</span>
-              </button>,
-            ),
-          )}
+
+                {variant === "basketball" && (
+                  <div className="sport-overview-grid">
+                    <div className="sport-overview-block">
+                      <small>TEAM</small>
+                      {firstTeam && (
+                        <span className="sport-identity-item">
+                          <TeamIdentity team={firstTeam} className="team-mark-small" />
+                          <span>{firstTeam.name}</span>
+                        </span>
+                      )}
+                      <span className="sport-secondary-line">{meta?.otherConnection}</span>
+                    </div>
+                    <div className="sport-overview-block">
+                      <small>WATCHING / SEEN IRL</small>
+                      <span>{meta?.leagues?.join(" · ")}</span>
+                      <span className="sport-secondary-line">Wizards / Nets</span>
+                    </div>
+                  </div>
+                )}
+
+                {variant === "baseball" && (
+                  <div className="sport-overview-grid">
+                    <div className="sport-overview-block">
+                      <small>MAIN TEAM / SIDE QUEST</small>
+                      {[firstTeam, secondTeam].filter(Boolean).map((item, index) => (
+                        <span className="sport-identity-item" key={item!.name}>
+                          <TeamIdentity team={item!} className="team-mark-small" />
+                          <span>{item!.name}</span>
+                          {index === 1 && <em className="sport-inline-note">SIDE QUEST</em>}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="sport-overview-block">
+                      <small>LEAGUES / WATCHLIST</small>
+                      <span>MLB · NPB · KBO · JAPAN HS</span>
+                      <div className="sport-mini-team-list">
+                        {leagueTeams.map((item) => (
+                          <span className="sport-identity-item" key={item!.name}>
+                            <TeamIdentity team={item!} className="team-mark-small" />
+                            <span>{item!.name}</span>
+                          </span>
+                        ))}
+                      </div>
+                      <span className="sport-secondary-line">Ohtani · Sasaki</span>
+                    </div>
+                  </div>
+                )}
+
+                {variant === "f1" && (
+                  <div className="sport-overview-grid">
+                    <div className="sport-overview-block">
+                      <small>TEAM</small>
+                      {firstTeam && (
+                        <span className="sport-identity-item">
+                          <TeamIdentity team={firstTeam} className="team-mark-small" />
+                          <span>{firstTeam.name}</span>
+                        </span>
+                      )}
+                      <p className="f1-confession">e eu infelizmente torço pra Ferrari.</p>
+                    </div>
+                    <div className="sport-overview-block">
+                      <small>FAVORITE DRIVERS / SIDE ACCOUNT</small>
+                      <span>Max Verstappen · Charles Leclerc</span>
+                      <span className="sport-secondary-line">{meta?.sideAccount?.handle}</span>
+                    </div>
+                  </div>
+                )}
+
+                <span className="sport-card-footer">
+                  <span>{cta}</span>
+                  <span aria-hidden="true">↗</span>
+                </span>
+              </button>
+            );
+          })}
         </div>
         <p className="footnote">
           Os placares são decorativos. Nenhum resultado ao vivo por aqui.

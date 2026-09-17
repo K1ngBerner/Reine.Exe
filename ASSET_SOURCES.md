@@ -46,10 +46,10 @@ Sports marks were downloaded locally from Wikimedia Commons file pages. They are
 | Local file | Source page |
 |---|---|
 | `public/assets/sports/teams/flamengo.svg` | [Clube de Regatas do Flamengo logo](https://commons.wikimedia.org/wiki/File:Flamengo_braz_logo.svg) |
-| `public/assets/sports/teams/bayern.svg` | [FC Bayern München logo (2017)](https://commons.wikimedia.org/wiki/File:FC_Bayern_M%C3%BCnchen_logo_(2017).svg) |
-| `public/assets/sports/teams/bulls.svg` | [Chicago Bulls logo](https://commons.wikimedia.org/wiki/File:Chicago_Bulls_logo.svg) |
-| `public/assets/sports/teams/cubs.svg` | [Chicago Cubs logo](https://commons.wikimedia.org/wiki/File:Chicago_Cubs_logo.svg) |
-| `public/assets/sports/teams/dodgers.svg` | [Los Angeles Dodgers Logo](https://commons.wikimedia.org/wiki/File:Los_Angeles_Dodgers_Logo.svg) |
-| `public/assets/sports/teams/doosan.svg` | [Doosan Bears insignia](https://commons.wikimedia.org/wiki/File:Doosan_Bears_insignia.svg) |
+| `public/assets/sports/teams/bayern-munich.svg` | [FC Bayern München logo (2017)](https://commons.wikimedia.org/wiki/File:FC_Bayern_M%C3%BCnchen_logo_(2017).svg) |
+| `public/assets/sports/teams/chicago-bulls.svg` | [Chicago Bulls logo](https://commons.wikimedia.org/wiki/File:Chicago_Bulls_logo.svg) |
+| `public/assets/sports/teams/chicago-cubs.svg` | [Chicago Cubs logo](https://commons.wikimedia.org/wiki/File:Chicago_Cubs_logo.svg) |
+| `public/assets/sports/teams/los-angeles-dodgers.svg` | [Los Angeles Dodgers Logo](https://commons.wikimedia.org/wiki/File:Los_Angeles_Dodgers_Logo.svg) |
+| `public/assets/sports/teams/doosan-bears.svg` | [Doosan Bears insignia](https://commons.wikimedia.org/wiki/File:Doosan_Bears_insignia.svg) |
 | `public/assets/sports/teams/yomiuri-giants.svg` | [Yomiuri Giants logos category](https://commons.wikimedia.org/wiki/Category:Yomiuri_Giants_logos) |
 | Scuderia Ferrari | Local mark intentionally pending; the UI uses the supplied `FER` fallback until a reasonably reliable source is available. |

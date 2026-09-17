@@ -35,6 +35,7 @@ export interface SportTeam {
 
 export interface SportMeta {
   variant: "football" | "basketball" | "baseball" | "f1";
+  overview?: string;
   teams?: SportTeam[];
   otherConnection?: string;
   favorites?: string[];

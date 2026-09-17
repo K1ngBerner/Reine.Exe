@@ -317,66 +317,239 @@
   }
 }
 
-/* Personal content pass: sports HUDs, real book covers and small identity cues. */
+/* SPORTS overview: one dark editorial interface, with sport accents kept to the edges. */
 .sports-grid {
-  align-items: stretch;
-  gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  background: var(--bg);
 }
 .sport-card {
-  min-height: 410px;
+  --sport-accent: var(--accent-teal);
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border-width: 1px;
-  border-color: color-mix(in srgb, currentColor 28%, transparent);
-  box-shadow: 5px 5px 0 color-mix(in srgb, var(--ink) 13%, transparent);
+  padding: 24px 26px 20px;
+  text-align: left;
+  color: var(--text);
+  background: var(--surface) !important;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+}
+.sport-card::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 2px;
+  margin-bottom: 17px;
+  background: var(--sport-accent);
 }
 .sport-card.sport-football {
-  background: #244e45;
+  --sport-accent: #6ea6a1;
 }
 .sport-card.sport-basketball {
-  background: #87522e;
+  --sport-accent: #d98a5c;
 }
 .sport-card.sport-baseball {
-  background: #294669;
+  --sport-accent: #7097c0;
 }
 .sport-card.sport-f1 {
-  background: #482f3d;
+  --sport-accent: #c36d87;
+}
+.sport-card:hover {
+  background: var(--panel) !important;
+}
+.sport-card-head,
+.sport-card-title-row,
+.sport-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.sport-card-head {
+  min-height: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font: 10px/1.3 "IBM Plex Mono", monospace;
+  letter-spacing: 0.04em;
+}
+.sport-card-head > small,
+.sport-card-kicker,
+.sport-overview-block > small {
+  font: 10px/1.4 "IBM Plex Mono", monospace;
+  letter-spacing: 0.04em;
+}
+.sport-card-title-row {
+  align-items: flex-start;
+  padding-top: 18px;
+}
+.sport-card-kicker {
+  display: block;
+  color: var(--sport-accent);
 }
 .sport-card h2 {
-  max-width: 72%;
-  margin-bottom: 14px;
+  max-width: none;
+  margin: 4px 0 0;
+  color: var(--text);
+  font: 600 clamp(34px, 3.5vw, 50px)/0.95 "Barlow Condensed", sans-serif;
+  letter-spacing: 0.01em;
 }
-.sport-card-identity {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 14px;
-  margin: 0 0 18px;
-  font: 10px/1.4 "IBM Plex Mono", monospace;
-  color: #eff5e8;
+.sport-card-glyph {
+  display: grid;
+  place-items: center;
+  flex: 0 0 34px;
+  width: 34px;
+  height: 34px;
+  color: var(--sport-accent);
+  border: 1px solid color-mix(in srgb, var(--sport-accent) 60%, var(--line));
+  font: 22px/1 "Barlow Condensed", sans-serif;
 }
-.sport-card-identity > span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+.sport-micro-indicator {
+  color: var(--muted);
+  font: 10px/1.3 "IBM Plex Mono", monospace;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
-.team-mark-small {
-  width: 22px !important;
-  height: 22px !important;
-  font-size: 8px !important;
+.sport-micro-indicator::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 7px 1px 0;
+  border: 1px solid var(--sport-accent);
+  transition: transform 180ms ease;
 }
-.team-mark-small img {
-  width: 20px;
-  height: 20px;
+.sport-card:hover .sport-micro-indicator {
+  color: var(--sport-accent);
 }
-.sport-side-label {
-  margin: auto 0 12px;
-  color: #f3d4df;
-  font: 10px "IBM Plex Mono", monospace;
+.sport-card:hover .sport-micro-indicator::before {
+  transform: rotate(45deg);
 }
-.sport-open {
+.sport-overview-copy {
+  max-width: 48rem;
+  margin: 16px 0 20px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.sport-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 22px;
   margin-top: auto;
 }
+.sport-overview-block {
+  min-width: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+.sport-overview-block > small {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+.sport-overview-block > span,
+.sport-overview-block > p,
+.sport-identity-item,
+.sport-secondary-line,
+.sport-inline-note {
+  font: 12px/1.5 "IBM Plex Mono", monospace;
+}
+.sport-identity-list {
+  display: grid;
+  gap: 6px;
+}
+.sport-mini-team-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+}
+.sport-identity-item {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+}
+.sport-identity-item > span:last-child {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sport-secondary-line {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+}
+.sport-inline-note {
+  margin-left: auto;
+  color: var(--sport-accent);
+  font-size: 9px;
+  white-space: nowrap;
+}
+.sport-card .team-mark {
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+}
+.sport-card .team-mark img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+.sport-card .team-mark-small {
+  font-size: 8px !important;
+}
+.sport-card .team-mark-fallback {
+  color: var(--sport-accent);
+  border-color: var(--sport-accent);
+  font-size: 8px;
+}
+.f1-confession {
+  margin: 8px 0 0;
+  color: var(--text);
+}
+.sport-card-footer {
+  margin-top: 22px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: var(--sport-accent);
+  font: 10px/1.4 "IBM Plex Mono", monospace;
+  letter-spacing: 0.04em;
+}
+.sport-card-footer > span:last-child {
+  font-size: 16px;
+  transition: transform 180ms ease;
+}
+.sport-card:hover .sport-card-footer > span:last-child {
+  transform: translateX(4px);
+}
+
+@media (max-width: 760px) {
+  .sports-grid {
+    grid-template-columns: 1fr;
+  }
+  .sport-card {
+    padding: 20px 18px 18px;
+  }
+  .sport-card h2 {
+    font-size: 38px;
+  }
+  .sport-overview-copy {
+    font-size: 13px;
+  }
+}
+
+/* Personal content pass: sports HUDs, real book covers and small identity cues. */
 .sport-detail-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(230px, 0.8fr);
@@ -634,5 +807,46 @@ footer {
   footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Keep the SPORTS overview overrides after the legacy area rules. */
+.sports-grid {
+  gap: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+.sport-card {
+  min-height: 0;
+  padding: 24px 26px 20px;
+  color: var(--text);
+  background: var(--surface) !important;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+.sport-card.sport-football,
+.sport-card.sport-basketball,
+.sport-card.sport-baseball,
+.sport-card.sport-f1 {
+  background: var(--surface) !important;
+}
+.sport-card h2 {
+  max-width: none;
+  margin: 4px 0 0;
+  color: var(--text);
+}
+.sport-card:hover {
+  background: var(--panel) !important;
+}
+@media (max-width: 760px) {
+  .sports-grid {
+    grid-template-columns: 1fr;
+  }
+  .sport-card {
+    min-height: 0;
+    padding: 20px 18px 18px;
   }
 }

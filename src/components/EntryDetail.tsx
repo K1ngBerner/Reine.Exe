@@ -2,6 +2,7 @@ import { translateTree } from "../i18n/tree";
 import { t } from "../i18n";
 import { useState } from "react";
 import type { Entry, SportTeam } from "../data/types";
+import TeamIdentity from "./TeamIdentity";
 
 function CopyParagraphs({ text }: { text: string }) {
   return (
@@ -14,15 +15,7 @@ function CopyParagraphs({ text }: { text: string }) {
 }
 
 function TeamMark({ team }: { team: SportTeam }) {
-  return (
-    <span className="team-mark" aria-hidden="true">
-      {team.logo ? (
-        <img src={team.logo} alt="" width="30" height="30" />
-      ) : (
-        <span>{team.fallback}</span>
-      )}
-    </span>
-  );
+  return <TeamIdentity team={team} />;
 }
 
 function SportHud({ entry }: { entry: Entry }) {

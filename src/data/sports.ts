@@ -3,7 +3,7 @@ import type { Entry } from "./types";
 const team = (name: string, fallback: string, logo?: string) => ({
   name,
   fallback,
-  logo: logo ? `assets/sports/teams/${logo}` : undefined,
+  logo: logo ? `/assets/sports/teams/${logo}` : undefined,
 });
 
 export const sports: Entry[] = [
@@ -17,9 +17,11 @@ export const sports: Entry[] = [
       "Futebol pra mim é quase uma coisa herdada. É o esporte favorito do meu pai e eu assisto desde antes de conseguir lembrar quando comecei, então acabou virando aquele clássico amor que passa de pai pra filho.\n\nCom o tempo a coisa saiu bastante da televisão também. Já fui a estádios no Brasil e em lugares como Espanha, Argentina e Alemanha, e é muito difícil não respeitar o tamanho que esse esporte consegue ter em culturas completamente diferentes.\n\nFlamengo e Bayern são os dois times que acabaram ficando comigo, então já passei tempo demais da minha vida vendo jogo dos dois a torto e a direito.\n\nMas no geral eu não sou muito seletivo não. Se existe uma liga disponível e uma bola rolando, existe uma chance considerável de eu acabar assistindo.\n\nTem que respeitar o tal do futebas.",
     sportMeta: {
       variant: "football",
+      overview:
+        "Vejo futebol desde antes de conseguir lembrar quando comecei. Flamengo, Bayern e praticamente qualquer campeonato que estiver passando.",
       teams: [
         team("CR Flamengo", "FLA", "flamengo.svg"),
-        team("FC Bayern München", "FCB", "bayern.svg"),
+        team("FC Bayern München", "FCB", "bayern-munich.svg"),
       ],
       seenIrl: ["Brazil", "Spain", "Argentina", "Germany"],
     },
@@ -34,7 +36,9 @@ export const sports: Entry[] = [
       "Meu gosto por basquete nasceu de um jeito meio absurdo: eu assisti Kuroko no Basket, gostei pra caralho e resolvi entrar numa escolinha.\n\nO negócio que começou por causa de anime simplesmente ficou, e hoje basquete é provavelmente meu esporte favorito de acompanhar, mesmo com o Chicago Bulls fazendo questão de testar essa relação todos os anos.\n\nTambém tive a oportunidade de ver NBA ao vivo, Wizards e Nets, e é uma experiência muito diferente de assistir pela televisão.\n\nJá acompanhei Mundial com o Flamengo e hoje assisto NBA, NBB e NCAA com bastante frequência.\n\nÉ engraçado pensar que um dos esportes que mais fazem parte da minha rotina começou basicamente porque eu vi cinco japoneses fazendo poderes sobrenaturais numa quadra.",
     sportMeta: {
       variant: "basketball",
-      teams: [team("Chicago Bulls", "CHI", "bulls.svg")],
+      overview:
+        "Começou com Kuroko no Basket, virou escolinha e acabou se tornando meu esporte favorito. O Bulls infelizmente veio junto.",
+      teams: [team("Chicago Bulls", "CHI", "chicago-bulls.svg")],
       otherConnection: "Flamengo Basketball",
       leagues: ["NBA", "NBB", "NCAA"],
       seenIrl: ["NBA", "Washington Wizards", "Brooklyn Nets"],
@@ -50,10 +54,12 @@ export const sports: Entry[] = [
       "Baseball é o hobby que eu menos consigo explicar de onde veio.\n\nTorço para o Chicago Cubs desde 2014, mas não existe uma grande história de origem. Eu simplesmente vi um jogo, gostei e aparentemente decidi que aquilo faria parte da minha vida dali em diante.\n\nHoje é meu segundo esporte favorito, mas provavelmente é o que eu mais consumo.\n\nMLB é o óbvio, mas assisto também NPB no Japão, KBO na Coreia e cheguei naquele ponto completamente saudável em que separo espaço no calendário para acompanhar baseball colegial japonês.\n\nTalvez ajude o fato de o esporte praticamente nunca acabar: temporadas gigantes, jogos acontecendo o tempo inteiro e sempre alguma liga em algum canto do planeta.\n\nEu só aceitei que gosto muito dessa porra.",
     sportMeta: {
       variant: "baseball",
+      overview:
+        "Cubs desde 2014. Dodgers principalmente porque qualquer jogo com Ohtani ou Sasaki já consegue minha atenção.",
       teams: [
-        team("Chicago Cubs", "CHC", "cubs.svg"),
-        team("Los Angeles Dodgers", "LAD", "dodgers.svg"),
-        team("Doosan Bears", "DOO", "doosan.svg"),
+        team("Chicago Cubs", "CHC", "chicago-cubs.svg"),
+        team("Los Angeles Dodgers", "LAD", "los-angeles-dodgers.svg"),
+        team("Doosan Bears", "DOO", "doosan-bears.svg"),
         team("Yomiuri Giants", "YGI", "yomiuri-giants.svg"),
       ],
       leagues: ["MLB", "NPB", "KBO", "Japanese High School Baseball"],
@@ -70,6 +76,8 @@ export const sports: Entry[] = [
       "Meu interesse por Fórmula 1 começou completamente por acaso.\n\nEm 2015 eu acordei mais cedo do que esperava num domingo, tinha uma corrida acontecendo e resolvi assistir.\n\nContinuei acompanhando e, em algum momento, percebi que já estava esperando a corrida do fim de semana.\n\nDos quatro esportes, provavelmente é o que acompanho de forma mais consistente. A temporada é mais enxuta, existe conteúdo pra caralho em volta e gosto principalmente das pequenas histórias que vão surgindo durante o ano.\n\nÀs vezes a graça não está em quem ganhou: é acompanhar um cara que largou em 12º, terminou em 6º e sentir que aquilo foi praticamente uma vitória.\n\nTambém acho interessante o quanto a F1 é condicionada pelo regulamento e pelo conjunto inteiro da equipe. Piloto importa obviamente, mas carro, motor, estratégia, pneus e desenvolvimento conseguem limitar ou transformar completamente uma temporada.\n\nQuando você começa a entender essas internas, acompanhar fica muito mais divertido.\n\ne eu infelizmente torço pra Ferrari.\n\nNão virei gearhead por muito pouco, mas quem entra pelo lado dos carros provavelmente encontra mais uns quinze hobbies esperando logo depois.",
     sportMeta: {
       variant: "f1",
+      overview:
+        "A temporada é enxuta, as histórias são boas e eu sempre acabo esperando a corrida do fim de semana.",
       teams: [team("Scuderia Ferrari", "FER")],
       favorites: ["Max Verstappen", "Charles Leclerc"],
       sideAccount: { handle: "@PapoDeBagre", url: "https://x.com/PapoDeBagre" },
