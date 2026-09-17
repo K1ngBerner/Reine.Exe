@@ -1,0 +1,318 @@
+/* Home + global theme/locale pass. Existing area layouts remain in midnight.css. */
+:root,
+:root[data-theme="night"] {
+  --bg: #100b18;
+  --surface: #181125;
+  --panel: #21172f;
+  --text: #ece8f2;
+  --muted: #9c91aa;
+  --accent-magenta: #b73567;
+  --accent-purple: #71558a;
+  --accent-teal: #315e69;
+  --night-ink: #100b18;
+  --dark-panel: #21172f;
+  --dark-teal: #315e69;
+  --paper-white: #ece8f2;
+  --paper: var(--surface);
+  --ink: var(--text);
+  --line: #45374f;
+  --wine: var(--accent-magenta);
+  --pink: #ca80a1;
+  --muted-purple: var(--accent-purple);
+  --blue: #a794b9;
+  background: var(--bg);
+  color: var(--text);
+}
+:root[data-theme="day"] {
+  --bg: #e8e2ec;
+  --surface: #f3eff6;
+  --panel: #e5ddeb;
+  --text: #21172f;
+  --muted: #70627c;
+  --paper: var(--surface);
+  --ink: var(--text);
+  --line: #cfc3d9;
+  --pink: #993058;
+  --blue: #5f4875;
+  background: var(--bg);
+  color: var(--text);
+}
+.save-composition {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  max-width: 1080px;
+  align-items: start;
+  margin-top: 26px;
+}
+.save-composition .trainer {
+  max-width: none;
+  margin: 0;
+  width: 100%;
+}
+.save-info {
+  max-width: none;
+  padding: 1px 0 0;
+}
+.save-name {
+  gap: 17px;
+}
+.save-name h1 {
+  font-size: 62px;
+  letter-spacing: 1px;
+  margin-bottom: 19px;
+}
+.save-name > span {
+  font-size: 13px;
+}
+.save-status {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.save-status dt {
+  font-size: 11px;
+}
+.save-status dd {
+  font-size: 12px;
+}
+.current-ledger {
+  margin-top: 25px;
+}
+.current-ledger > div {
+  grid-template-columns: minmax(115px, 0.78fr) minmax(0, 1.22fr);
+  gap: 17px;
+  padding: 18px 0;
+}
+.current-ledger small {
+  font-size: 11px;
+  line-height: 1.7;
+}
+.current-ledger p {
+  font:
+    15px/1.65 Inter,
+    Arial,
+    sans-serif;
+  overflow-wrap: anywhere;
+}
+.reading-series {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 5px;
+}
+.current-ledger > div:last-child p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.save-actions {
+  margin-top: 16px;
+  gap: 22px;
+}
+.home-lower {
+  margin-top: 42px;
+  gap: 45px;
+  grid-template-columns: 1fr 0.92fr;
+  max-width: 1080px;
+}
+.home-lower .route-index {
+  margin-top: 0;
+}
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+  font:
+    12px "IBM Plex Mono",
+    monospace;
+  color: var(--muted);
+}
+.language-toggle button,
+.topbar .language-toggle button,
+.window-title .language-toggle button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: inherit;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin: 0;
+  padding: 7px 5px;
+  min-width: 30px;
+  min-height: 34px;
+  font: inherit;
+}
+.language-toggle button[aria-pressed="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--accent-magenta);
+}
+.language-toggle button:hover {
+  color: var(--pink);
+}
+.window-title .language-toggle {
+  color: #b3a4c1;
+}
+.window-title .language-toggle button[aria-pressed="true"],
+.start-top .language-toggle button[aria-pressed="true"] {
+  color: #ece8f2;
+}
+.topbar .language-toggle {
+  margin-right: 8px;
+  padding-right: 10px;
+  border-right: 1px solid var(--line);
+}
+.window-title > div {
+  align-items: center;
+}
+.window-title > .language-toggle {
+  margin-left: auto;
+}
+.window-title .language-toggle {
+  margin-right: 5px;
+}
+.topbar .language-toggle > span {
+  font-size: 11px;
+}
+.start-top {
+  align-items: center;
+}
+.start-top .language-toggle {
+  color: #b3a4c1;
+}
+@media (min-width: 1500px) {
+  .save-composition {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: 28px;
+  }
+  .save-composition .trainer {
+    max-width: none;
+  }
+  .save-info {
+    max-width: none;
+  }
+}
+@media (max-width: 1100px) {
+  .save-composition {
+    gap: 23px;
+  }
+  .save-name h1 {
+    font-size: 54px;
+  }
+  .current-ledger > div {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 14px 0;
+  }
+  .current-ledger p {
+    font-size: 14px;
+  }
+  .home-lower {
+    gap: 30px;
+  }
+  .save-actions {
+    gap: 16px;
+  }
+  .save-actions button,
+  .save-actions a {
+    font-size: 11px;
+  }
+}
+@media (max-width: 760px) {
+  .save-composition {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .save-composition .trainer {
+    order: 1;
+    max-width: 380px;
+  }
+  .save-info {
+    order: 2;
+  }
+  .save-name h1 {
+    font-size: 55px;
+  }
+  .current-ledger {
+    margin-top: 20px;
+  }
+  .current-ledger > div {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 16px 0;
+  }
+  .current-ledger small {
+    font-size: 11px;
+  }
+  .current-ledger p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .current-ledger > div:last-child p {
+    font-size: 14px;
+  }
+  .home-lower {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-top: 35px;
+  }
+  .save-actions button,
+  .save-actions a {
+    font-size: 12px;
+  }
+  .topbar > span {
+    max-width: 110px;
+    font-size: 8px;
+    line-height: 1.6;
+  }
+  .topbar > div {
+    gap: 5px;
+  }
+  .topbar .language-toggle {
+    margin: 0;
+    padding-right: 5px;
+  }
+  .topbar > div > button {
+    margin-left: 3px;
+  }
+  .topbar .save-top {
+    font-size: 8px;
+    margin-left: 2px;
+    max-width: 49px;
+    padding: 5px 0;
+    text-align: center;
+  }
+  .topbar .language-toggle button {
+    min-width: 25px;
+    padding: 7px 3px;
+    font-size: 11px;
+  }
+  .window-title > div > button:first-child {
+    display: flex;
+  }
+  .window-title .language-toggle button {
+    display: inline-flex !important;
+    font-size: 11px;
+    min-width: 24px;
+  }
+  .window-title > div > button[aria-label="Minimizar janela"],
+  .window-title > div > button[aria-label="Minimize window"] {
+    display: none;
+  }
+  .window-title > span {
+    font-size: 10px;
+  }
+  .window-title {
+    gap: 8px;
+  }
+  .window-title > div {
+    gap: 3px;
+  }
+  .trainer-footer > span {
+    font-size: 10px;
+  }
+  .trainer-footer small {
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,1 @@
+const fs=require('fs');for(const [f,value] of [['pt','Classe:'],['en','Class:']]){const p='src/i18n/'+f+'.ts';let s=fs.readFileSync(p,'utf8');s=s.replace('export const '+f+': Record<string,string> = {','export const '+f+': Record<string,string> = {\n  "Classe:": '+JSON.stringify(value)+',');fs.writeFileSync(p,s)}
