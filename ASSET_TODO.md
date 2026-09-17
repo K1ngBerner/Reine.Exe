@@ -8,7 +8,7 @@ Nenhuma imagem quebrada é usada como placeholder.
 - **MP3**: completar autoria, fonte e termos de uso do arquivo enviado em `src/data/music.ts` e `credits.ts`. O nome “Copyright Safe” foi fornecido no arquivo, não é uma verificação independente de licença.
 - **GIFs/clipes opcionais**: faltam clipes reais para estados animados dos três jogos e projetos. Screenshots/promotional art locais estão integrados. Não foram gerados vídeos falsos. `MotionAsset` aceita poster e clip; respeita reduced motion e pausa fora da viewport.
 - **Capas de livros**: as três capas fornecidas por Reine já estão copiadas sem alteração em `public/assets/books/`.
-- **Marcas esportivas**: falta um asset local confiável para Scuderia Ferrari; a interface usa a sigla `FER` até que uma fonte seja verificada.
+- **Marcas esportivas**: as oito logos estão previstas no script `scripts/fetch-sports-assets.mjs`; se uma fonte falhar, a interface mantém a sigla de fallback.
 - **Sons de UI**: nenhum arquivo fornecido; não há efeito sonoro automático.
 
 Os assets de perfil, quatro expressões, logo, MP3, seis screenshots/promotional artworks e as duas artes originais MY PARTY estão instalados localmente.

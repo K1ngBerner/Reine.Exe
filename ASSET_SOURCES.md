@@ -36,20 +36,20 @@ No ROMs were downloaded.
 The book covers below were supplied directly by Reine in the workspace. They are copied unchanged; no replacement covers, upscaling or generated artwork was used.
 
 | Local file | Credit / provenance |
-|---|---|
+|---|---|---|
 | `public/assets/books/battle-of-the-labyrinth.png` | User-provided cover image: `H:/battle-of-the-labyrinth.png` |
 | `public/assets/books/sign-of-four.png` | User-provided cover image: `H:/sign-of-four.png` |
 | `public/assets/books/green-capsule.png` | User-provided cover image: `H:/green-capsule.png` |
 
-Sports marks were downloaded locally from Wikimedia Commons file pages. They are used as small identity elements, not as club pages or endorsements.
+Sports marks are downloaded once by `scripts/fetch-sports-assets.mjs` and stored locally. Runtime code only reads `/assets/sports/teams/...`; it never requests these sources from the browser. They are used as small identity elements, not as club pages or endorsements.
 
-| Local file | Source page |
-|---|---|
-| `public/assets/sports/teams/flamengo.svg` | [Clube de Regatas do Flamengo logo](https://commons.wikimedia.org/wiki/File:Flamengo_braz_logo.svg) |
-| `public/assets/sports/teams/bayern-munich.svg` | [FC Bayern München logo (2017)](https://commons.wikimedia.org/wiki/File:FC_Bayern_M%C3%BCnchen_logo_(2017).svg) |
-| `public/assets/sports/teams/chicago-bulls.svg` | [Chicago Bulls logo](https://commons.wikimedia.org/wiki/File:Chicago_Bulls_logo.svg) |
-| `public/assets/sports/teams/chicago-cubs.svg` | [Chicago Cubs logo](https://commons.wikimedia.org/wiki/File:Chicago_Cubs_logo.svg) |
-| `public/assets/sports/teams/los-angeles-dodgers.svg` | [Los Angeles Dodgers Logo](https://commons.wikimedia.org/wiki/File:Los_Angeles_Dodgers_Logo.svg) |
-| `public/assets/sports/teams/doosan-bears.svg` | [Doosan Bears insignia](https://commons.wikimedia.org/wiki/File:Doosan_Bears_insignia.svg) |
-| `public/assets/sports/teams/yomiuri-giants.svg` | [Yomiuri Giants logos category](https://commons.wikimedia.org/wiki/Category:Yomiuri_Giants_logos) |
-| Scuderia Ferrari | Local mark intentionally pending; the UI uses the supplied `FER` fallback until a reasonably reliable source is available. |
+| Local file | Source page | Download source |
+|---|---|---|
+| `public/assets/sports/teams/flamengo.svg` | [Clube de Regatas do Flamengo logo](https://commons.wikimedia.org/wiki/File:Clube_de_Regatas_do_Flamengo_logo.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/9/96/Clube_de_Regatas_do_Flamengo_logo.svg) |
+| `public/assets/sports/teams/bayern-munich.svg` | [FC Bayern München logo (2017)](https://commons.wikimedia.org/wiki/File:FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg) |
+| `public/assets/sports/teams/chicago-bulls.svg` | [Chicago Bulls logo](https://commons.wikimedia.org/wiki/File:Chicago_Bulls_logo.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/6/67/Chicago_Bulls_logo.svg) |
+| `public/assets/sports/teams/chicago-cubs.svg` | [Chicago Cubs logo](https://commons.wikimedia.org/wiki/File:Chicago_Cubs_logo.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/8/80/Chicago_Cubs_logo.svg) |
+| `public/assets/sports/teams/los-angeles-dodgers.svg` | [Los Angeles Dodgers Logo](https://commons.wikimedia.org/wiki/File:Los_Angeles_Dodgers_Logo.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/0/0e/Los_Angeles_Dodgers_Logo.svg) |
+| `public/assets/sports/teams/doosan-bears.svg` | [Doosan Bears insignia](https://commons.wikimedia.org/wiki/File:Doosan_Bears_insignia.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/a/a2/Doosan_Bears_insignia.svg) |
+| `public/assets/sports/teams/yomiuri-giants.svg` | [Yomiuri Giants logo](https://commons.wikimedia.org/wiki/File:Yomiuri_Giants_logo.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/f/f5/Yomiuri_Giants_logo.svg) |
+| `public/assets/sports/teams/ferrari.svg` | [F1 Team Icon — Ferrari (2009)](https://commons.wikimedia.org/wiki/File:F1_Team_Icon_-_Ferrari%282009%29.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/8/8e/F1_Team_Icon_-_Ferrari%282009%29.svg) |

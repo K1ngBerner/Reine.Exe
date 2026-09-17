@@ -7,7 +7,8 @@
     "dev": "vite --host 127.0.0.1",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview --host 127.0.0.1"
+    "preview": "vite preview --host 127.0.0.1",
+    "assets:sports": "node scripts/fetch-sports-assets.mjs"
   },
   "dependencies": {
     "react": "^19.1.0",

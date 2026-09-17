@@ -78,7 +78,7 @@ export const sports: Entry[] = [
       variant: "f1",
       overview:
         "A temporada é enxuta, as histórias são boas e eu sempre acabo esperando a corrida do fim de semana.",
-      teams: [team("Scuderia Ferrari", "FER")],
+      teams: [team("Scuderia Ferrari", "FER", "ferrari.svg")],
       favorites: ["Max Verstappen", "Charles Leclerc"],
       sideAccount: { handle: "@PapoDeBagre", url: "https://x.com/PapoDeBagre" },
     },
