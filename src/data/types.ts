@@ -21,6 +21,27 @@ export interface Entry {
   features?: string[];
   needsMetadata?: boolean;
   status?: string;
+  cover?: string;
+  coverWidth?: number;
+  coverHeight?: number;
+  sportMeta?: SportMeta;
+}
+
+export interface SportTeam {
+  name: string;
+  logo?: string;
+  fallback: string;
+}
+
+export interface SportMeta {
+  variant: "football" | "basketball" | "baseball" | "f1";
+  teams?: SportTeam[];
+  otherConnection?: string;
+  favorites?: string[];
+  seenIrl?: string[];
+  leagues?: string[];
+  players?: string[];
+  sideAccount?: { handle: string; url: string };
 }
 export type Area =
   | "home"

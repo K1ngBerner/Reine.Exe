@@ -7,6 +7,9 @@ export const books: Entry[] = [
     creator: "Rick Riordan",
     year: "2008",
     genre: "Fantasia / mitologia",
+    cover: "assets/books/battle-of-the-labyrinth.png",
+    coverWidth: 667,
+    coverHeight: 1000,
     context:
       "O quarto livro de Percy Jackson e os Olimpianos leva o grupo ao labirinto de Dédalo, enquanto uma ameaça se aproxima do Acampamento Meio-Sangue.",
     personal:
@@ -21,6 +24,9 @@ export const books: Entry[] = [
     creator: "Arthur Conan Doyle",
     year: "1890",
     genre: "Mistério / investigação",
+    cover: "assets/books/sign-of-four.png",
+    coverWidth: 1365,
+    coverHeight: 2048,
     context:
       "O segundo romance de Sherlock Holmes reúne um desaparecimento, um tesouro e um caso apresentado por Mary Morstan a Holmes e Watson.",
     personal:
@@ -39,6 +45,9 @@ export const books: Entry[] = [
     usTitle: "The Problem of the Green Capsule",
     germanTitle: "Die grüne Kapsel",
     genre: "Mystery / Detective Fiction / Impossible Crime",
+    cover: "assets/books/green-capsule.png",
+    coverWidth: 225,
+    coverHeight: 250,
     context:
       "Publicado em 1939, este mistério da série Dr. Gideon Fell é conhecido como The Black Spectacles no Reino Unido, The Problem of the Green Capsule nos Estados Unidos e Die grüne Kapsel em alemão.",
     personal:

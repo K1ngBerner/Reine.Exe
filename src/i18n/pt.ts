@@ -545,5 +545,33 @@ export const pt: Record<string, string> = {
   Produção: "Produção",
   Série: "Série",
   Fonte: "Fonte",
+  "HOW IT WORKS": "COMO FUNCIONA",
+  "WHY I'M HERE": "POR QUE EU ACOMPANHO",
+  "WHY I'M HERE / PERSONAL LOG": "POR QUE EU ACOMPANHO / REGISTRO PESSOAL",
+  "HOW IT WORKS / QUICK RULES": "COMO FUNCIONA / REGRAS RÁPIDAS",
+  "PERSONAL DATA": "DADOS PESSOAIS",
+  MATCHDAY: "MATCHDAY",
+  "SCORE PANEL": "PAINEL DE PLACAR",
+  LINEUP: "LINEUP",
+  "TIMING TOWER": "TORRE DE CRONOMETRAGEM",
+  TEAMS: "TIMES",
+  TEAM: "EQUIPE",
+  "TEAMS / THE LINEUP": "TIMES / LINEUP",
+  "OTHER CONNECTION": "OUTRA CONEXÃO",
+  "FAVORITE DRIVERS": "PILOTOS FAVORITOS",
+  "PLAYERS I WILL ABSOLUTELY STOP WHAT I'M DOING TO WATCH":
+    "JOGADORES QUE VÃO ME FAZER PARAR O QUE ESTOU FAZENDO",
+  "LEAGUES I WATCH": "LIGAS QUE ACOMPANHO",
+  "SEEN IRL": "VISTO AO VIVO",
+  "SPORTS SIDE ACCOUNT": "CONTA PARALELA DE SPORTS",
+  "Obrigado por transformar alguns dos meus Pokémon favoritos nessa arte absurda.":
+    "Obrigado por transformar alguns dos meus Pokémon favoritos nessa arte absurda.",
+  "ABRIR FICHA ↗": "ABRIR FICHA ↗",
+  "Capas fornecidas por Reine. Selecione um livro para abrir a ficha e as notas de leitura.":
+    "Capas fornecidas por Reine. Selecione um livro para abrir a ficha e as notas de leitura.",
+  "PATCH NOTES": "PATCH NOTES",
+  "LAST SAVE · 17.09.2026": "LAST SAVE · 17.09.2026",
+  "Uma atualização pequena, mas bastante pessoal.":
+    "Uma atualização pequena, mas bastante pessoal.",
   BRASIL: "BRASIL",
 };

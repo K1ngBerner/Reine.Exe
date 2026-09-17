@@ -543,5 +543,95 @@ export const en: Record<string, string> = {
   Produção: "Production",
   Série: "Series",
   Fonte: "Source",
+  "HOW IT WORKS": "HOW IT WORKS",
+  "WHY I'M HERE": "WHY I'M HERE",
+  "WHY I'M HERE / PERSONAL LOG": "WHY I'M HERE / PERSONAL LOG",
+  "HOW IT WORKS / QUICK RULES": "HOW IT WORKS / QUICK RULES",
+  "PERSONAL DATA": "PERSONAL DATA",
+  MATCHDAY: "MATCHDAY",
+  "SCORE PANEL": "SCORE PANEL",
+  LINEUP: "LINEUP",
+  "TIMING TOWER": "TIMING TOWER",
+  TEAMS: "TEAMS",
+  TEAM: "TEAM",
+  "TEAMS / THE LINEUP": "TEAMS / THE LINEUP",
+  "OTHER CONNECTION": "OTHER CONNECTION",
+  "FAVORITE DRIVERS": "FAVORITE DRIVERS",
+  "PLAYERS I WILL ABSOLUTELY STOP WHAT I'M DOING TO WATCH":
+    "PLAYERS I WILL ABSOLUTELY STOP WHAT I'M DOING TO WATCH",
+  "LEAGUES I WATCH": "LEAGUES I WATCH",
+  "SEEN IRL": "SEEN IRL",
+  "SPORTS SIDE ACCOUNT": "SPORTS SIDE ACCOUNT",
+  "Obrigado por transformar alguns dos meus Pokémon favoritos nessa arte absurda.":
+    "Thanks for turning some of my favorite Pokémon into this ridiculously cool piece.",
+  "ABRIR FICHA ↗": "OPEN FILE ↗",
+  "Capas fornecidas por Reine. Selecione um livro para abrir a ficha e as notas de leitura.":
+    "Covers supplied by Reine. Select a book to open its file and reading notes.",
+  "PATCH NOTES": "PATCH NOTES",
+  "LAST SAVE · 17.09.2026": "LAST SAVE · 17.09.2026",
+  "Uma atualização pequena, mas bastante pessoal.":
+    "A small update, but a very personal one.",
+  "Futebol pra mim é quase uma coisa herdada. É o esporte favorito do meu pai e eu assisto desde antes de conseguir lembrar quando comecei, então acabou virando aquele clássico amor que passa de pai pra filho.":
+    "Football feels inherited to me. It is my dad's favorite sport, and I have watched it for as long as I can remember, so it became that classic love passed from father to son.",
+  "Com o tempo a coisa saiu bastante da televisão também. Já fui a estádios no Brasil e em lugares como Espanha, Argentina e Alemanha, e é muito difícil não respeitar o tamanho que esse esporte consegue ter em culturas completamente diferentes.":
+    "Over time it moved well beyond television. I have been to stadiums in Brazil and in places such as Spain, Argentina and Germany, and it is hard not to respect the scale this sport can have across completely different cultures.",
+  "Flamengo e Bayern são os dois times que acabaram ficando comigo, então já passei tempo demais da minha vida vendo jogo dos dois a torto e a direito.":
+    "Flamengo and Bayern are the two teams that stayed with me, so I have spent far too much of my life watching both of them whenever I can.",
+  "Mas no geral eu não sou muito seletivo não. Se existe uma liga disponível e uma bola rolando, existe uma chance considerável de eu acabar assistindo.":
+    "But generally I am not very selective. If there is a league available and a ball in play, there is a decent chance I will end up watching.",
+  "Tem que respeitar o tal do futebas.": "You have to respect the beautiful game.",
+  "Meu gosto por basquete nasceu de um jeito meio absurdo: eu assisti Kuroko no Basket, gostei pra caralho e resolvi entrar numa escolinha.":
+    "My interest in basketball started in a slightly absurd way: I watched Kuroko no Basket, loved it and decided to join a youth program.",
+  "O negócio que começou por causa de anime simplesmente ficou, e hoje basquete é provavelmente meu esporte favorito de acompanhar, mesmo com o Chicago Bulls fazendo questão de testar essa relação todos os anos.":
+    "The thing that started because of an anime simply stayed, and basketball is probably my favorite sport to follow now, even with the Chicago Bulls testing that relationship every year.",
+  "Também tive a oportunidade de ver NBA ao vivo, Wizards e Nets, e é uma experiência muito diferente de assistir pela televisão.":
+    "I have also had the chance to see the NBA live, including the Wizards and Nets, and it is a very different experience from watching on television.",
+  "Já acompanhei Mundial com o Flamengo e hoje assisto NBA, NBB e NCAA com bastante frequência.":
+    "I have followed the World Championship with Flamengo, and these days I watch the NBA, NBB and NCAA fairly often.",
+  "É engraçado pensar que um dos esportes que mais fazem parte da minha rotina começou basicamente porque eu vi cinco japoneses fazendo poderes sobrenaturais numa quadra.":
+    "It is funny that one of the sports most present in my routine began because I watched five Japanese characters use supernatural powers on a court.",
+  "Baseball é o hobby que eu menos consigo explicar de onde veio.":
+    "Baseball is the hobby whose origin I can explain the least.",
+  "Torço para o Chicago Cubs desde 2014, mas não existe uma grande história de origem. Eu simplesmente vi um jogo, gostei e aparentemente decidi que aquilo faria parte da minha vida dali em diante.":
+    "I have supported the Chicago Cubs since 2014, but there is no grand origin story. I watched a game, liked it and apparently decided it would be part of my life from then on.",
+  "Hoje é meu segundo esporte favorito, mas provavelmente é o que eu mais consumo.":
+    "It is my second favorite sport today, but probably the one I consume the most.",
+  "MLB é o óbvio, mas assisto também NPB no Japão, KBO na Coreia e cheguei naquele ponto completamente saudável em que separo espaço no calendário para acompanhar baseball colegial japonês.":
+    "MLB is the obvious one, but I also watch NPB in Japan, KBO in Korea and have reached the perfectly healthy point where I reserve calendar space for Japanese high-school baseball.",
+  "Talvez ajude o fato de o esporte praticamente nunca acabar: temporadas gigantes, jogos acontecendo o tempo inteiro e sempre alguma liga em algum canto do planeta.":
+    "It may help that the sport practically never ends: huge seasons, games happening constantly and always another league somewhere in the world.",
+  "Eu só aceitei que gosto muito dessa porra.": "I have accepted that I really love this damn sport.",
+  "Meu interesse por Fórmula 1 começou completamente por acaso.":
+    "My interest in Formula 1 began completely by accident.",
+  "Em 2015 eu acordei mais cedo do que esperava num domingo, tinha uma corrida acontecendo e resolvi assistir.":
+    "In 2015 I woke up earlier than expected on a Sunday, there was a race on and I decided to watch.",
+  "Continuei acompanhando e, em algum momento, percebi que já estava esperando a corrida do fim de semana.":
+    "I kept following it and, at some point, realized I was already waiting for the weekend race.",
+  "Dos quatro esportes, provavelmente é o que acompanho de forma mais consistente. A temporada é mais enxuta, existe conteúdo pra caralho em volta e gosto principalmente das pequenas histórias que vão surgindo durante o ano.":
+    "Of the four sports, it is probably the one I follow most consistently. The season is shorter, there is a ridiculous amount of surrounding content, and I especially like the small stories that emerge during the year.",
+  "Às vezes a graça não está em quem ganhou: é acompanhar um cara que largou em 12º, terminou em 6º e sentir que aquilo foi praticamente uma vitória.":
+    "Sometimes the fun is not who won: it is following someone who started 12th, finished 6th and feeling as if that was practically a victory.",
+  "Também acho interessante o quanto a F1 é condicionada pelo regulamento e pelo conjunto inteiro da equipe. Piloto importa obviamente, mas carro, motor, estratégia, pneus e desenvolvimento conseguem limitar ou transformar completamente uma temporada.":
+    "I also find it interesting how much F1 is shaped by the regulations and the whole team. The driver matters, obviously, but the car, engine, strategy, tires and development can limit or completely transform a season.",
+  "Quando você começa a entender essas internas, acompanhar fica muito mais divertido.":
+    "Once you start understanding those inner workings, following it becomes much more fun.",
+  "Não virei gearhead por muito pouco, mas quem entra pelo lado dos carros provavelmente encontra mais uns quinze hobbies esperando logo depois.":
+    "I narrowly avoided becoming a gearhead, but anyone who enters through the cars will probably find another fifteen hobbies waiting right behind them.",
+  "Duas equipes de onze tentam colocar a bola no gol adversário. Goleiro, defesa, meio-campo e ataque dividem responsabilidades; só o goleiro pode usar as mãos, dentro da própria área. São dois tempos de 45 minutos, mais acréscimos.":
+    "Two teams of eleven try to put the ball in the opponent's goal. The goalkeeper, defense, midfield and attack share responsibilities; only the goalkeeper can use their hands inside their own area. There are two 45-minute halves plus added time.",
+  "No impedimento, a posição é avaliada no momento do passe de um companheiro: estar mais perto da linha de gol que a bola e o penúltimo adversário, no campo rival, pode ser infração se o jogador participar ativamente. Faltas podem resultar em tiro livre, pênalti e cartões.":
+    "For offside, position is judged when a teammate plays the ball: being closer to the goal line than both the ball and the second-last opponent in the opposition half can be an offense if the player becomes actively involved. Fouls can result in free kicks, penalties and cards.",
+  "Cinco de cada lado. A bola precisa entrar na cesta, mas chegar lá envolve passes, dribles e movimentação sem a bola. Uma cesta vale dois pontos ou três de fora do arco; lance livre vale um.":
+    "Five on each side. The ball has to go through the basket, but getting there involves passing, dribbling and movement off the ball. A basket is worth two points or three from beyond the arc; a free throw is worth one.",
+  "A posse tem tempo limitado para a tentativa de arremesso. Não vale caminhar segurando a bola sem driblar. Contato ilegal pode ser falta, gerando reposição ou lances livres. Duração dos períodos e alguns detalhes variam entre ligas.":
+    "Each possession has a time limit for a shot attempt. You cannot walk while holding the ball without dribbling. Illegal contact can be a foul, leading to an inbound or free throws. Period lengths and some details vary by league.",
+  "Duas equipes passam um bom tempo tentando convencer uma bola a não cair onde deveria. Na prática, alternam ataque e defesa durante nove entradas (innings), normalmente.":
+    "Two teams spend a long time trying to persuade a ball not to land where it should. In practice, they alternate offense and defense over nine innings, normally.",
+  "O pitcher arremessa e o batter tenta rebater. O ataque marca uma run ao percorrer as três bases e voltar ao home plate. Três eliminações encerram a metade da entrada. Três strikes eliminam o rebatedor; quatro balls concedem a primeira base. Empates podem levar a entradas extras.":
+    "The pitcher throws and the batter tries to hit. The offense scores a run by passing all three bases and returning to home plate. Three outs end a half-inning. Three strikes retire the batter; four balls award first base. Ties can lead to extra innings.",
+  "Parece só acelerar. Até entrar a estratégia. Um fim de semana costuma ter treinos, classificação (quali) e corrida; alguns também têm sprint, com formato próprio. A classificação define a ordem de largada, sujeita a penalidades.":
+    "It looks like just accelerating, until strategy enters the picture. A weekend usually has practice, qualifying and a race; some also have a sprint with its own format. Qualifying sets the starting order, subject to penalties.",
+  "Na corrida, vence quem completa primeiro a distância prevista. Pit stops trocam pneus e mudam estratégias. Compostos diferentes equilibram aderência e duração. Clima, tráfego, bandeiras e safety car podem virar uma corrida do avesso.":
+    "The race is won by whoever completes the scheduled distance first. Pit stops change tires and strategies. Different compounds balance grip and durability. Weather, traffic, flags and the safety car can turn a race upside down.",
   BRASIL: "BRAZIL",
 };

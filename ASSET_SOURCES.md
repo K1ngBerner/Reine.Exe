@@ -30,3 +30,26 @@ This Gym of Mine is a fangame (RPG Maker / Pokemon Essentials ecosystem), not a 
 Elysium is a completed FireRed GBA ROM hack by BlackKaiser. Thread currently lists v2.5.0 dated 16 July 2026, with Parts A and B.
 Unbound is a FireRed GBA ROM hack by Skeli and team. Link to the original creator thread rather than a third-party ROM download.
 No ROMs were downloaded.
+
+## Personal collection and sports marks
+
+The book covers below were supplied directly by Reine in the workspace. They are copied unchanged; no replacement covers, upscaling or generated artwork was used.
+
+| Local file | Credit / provenance |
+|---|---|
+| `public/assets/books/battle-of-the-labyrinth.png` | User-provided cover image: `H:/battle-of-the-labyrinth.png` |
+| `public/assets/books/sign-of-four.png` | User-provided cover image: `H:/sign-of-four.png` |
+| `public/assets/books/green-capsule.png` | User-provided cover image: `H:/green-capsule.png` |
+
+Sports marks were downloaded locally from Wikimedia Commons file pages. They are used as small identity elements, not as club pages or endorsements.
+
+| Local file | Source page |
+|---|---|
+| `public/assets/sports/teams/flamengo.svg` | [Clube de Regatas do Flamengo logo](https://commons.wikimedia.org/wiki/File:Flamengo_braz_logo.svg) |
+| `public/assets/sports/teams/bayern.svg` | [FC Bayern München logo (2017)](https://commons.wikimedia.org/wiki/File:FC_Bayern_M%C3%BCnchen_logo_(2017).svg) |
+| `public/assets/sports/teams/bulls.svg` | [Chicago Bulls logo](https://commons.wikimedia.org/wiki/File:Chicago_Bulls_logo.svg) |
+| `public/assets/sports/teams/cubs.svg` | [Chicago Cubs logo](https://commons.wikimedia.org/wiki/File:Chicago_Cubs_logo.svg) |
+| `public/assets/sports/teams/dodgers.svg` | [Los Angeles Dodgers Logo](https://commons.wikimedia.org/wiki/File:Los_Angeles_Dodgers_Logo.svg) |
+| `public/assets/sports/teams/doosan.svg` | [Doosan Bears insignia](https://commons.wikimedia.org/wiki/File:Doosan_Bears_insignia.svg) |
+| `public/assets/sports/teams/yomiuri-giants.svg` | [Yomiuri Giants logos category](https://commons.wikimedia.org/wiki/Category:Yomiuri_Giants_logos) |
+| Scuderia Ferrari | Local mark intentionally pending; the UI uses the supplied `FER` fallback until a reasonably reliable source is available. |

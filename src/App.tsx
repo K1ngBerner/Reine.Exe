@@ -37,7 +37,7 @@ type Modal =
       sport?: boolean;
     }
   | {
-      type: "map" | "badges" | "save" | "credits" | "links";
+      type: "map" | "badges" | "save" | "credits" | "links" | "patch";
     }
   | {
       type: "dialogue";
@@ -309,7 +309,10 @@ export default function App() {
               <button onClick={() => setModal({ type: "credits" })}>
                 CRÉDITOS & FONTES
               </button>
-              <span>SEM CHECKPOINT OBRIGATÓRIO.</span>
+              <button onClick={() => setModal({ type: "patch" })}>
+                PATCH NOTES
+              </button>
+              <span>LAST SAVE · 17.09.2026</span>
               <span>© REINE · SAVE 001</span>
             </footer>
           </div>
@@ -445,6 +448,23 @@ export default function App() {
               >
                 VER BADGES
               </button>
+            </>
+          ) : modal.type === "patch" ? (
+            <>
+              <div className="modal-heading">
+                <small>LAST SAVE / 17.09.2026</small>
+                <h2>Patch notes</h2>
+                <p>Uma atualização pequena, mas bastante pessoal.</p>
+              </div>
+              <div className="patch-notes">
+                <strong>v0.3</strong>
+                <ul>
+                  <li>+ added sports lore</li>
+                  <li>+ updated bookshelf</li>
+                  <li>+ added my party artwork</li>
+                  <li>+ fixed questionable life choices</li>
+                </ul>
+              </div>
             </>
           ) : (
             <>

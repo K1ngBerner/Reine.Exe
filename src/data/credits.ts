@@ -1,17 +1,33 @@
 export const credits = [
   {
-    asset: "MY PARTY / Party Strip",
-    credit: "Illustration by @ped_joaquim ♡ · originais fornecidos por Reine",
-    url: "https://x.com/ped_joaquim",
+    asset: "ART / MY PARTY",
+    credit: "Pedro Joaquim — @ped_joaquim · originais fornecidos por Reine",
+    url: "https://www.instagram.com/ped_joaquim?stkn=MWN1Z2xrZnRhaW53eA==",
+  },
+  {
+    asset: "DEVELOPMENT",
+    credit: "Reine",
+    url: "",
+  },
+  {
+    asset: "MUSIC",
+    credit:
+      "Inception · Cyberpunk Darksynth · arquivo fornecido por Reine; metadados exibidos sem alegação de autoria ou licença.",
+    url: "",
+  },
+  {
+    asset: "BOOK COVERS",
+    credit: "Três imagens fornecidas diretamente por Reine; usadas sem alteração.",
+    url: "",
+  },
+  {
+    asset: "SPORTS MARKS",
+    credit: "Ícones locais de times/equipes obtidos de páginas do Wikimedia Commons; fontes detalhadas em ASSET_SOURCES.md.",
+    url: "https://commons.wikimedia.org/wiki/Category:Sports_logos",
   },
   {
     asset: "Perfil, personagem e logo 2Doods",
     credit: "Arquivos fornecidos por Reine",
-    url: "",
-  },
-  {
-    asset: "Inception · Cyberpunk Darksynth",
-    credit: "MP3 fornecido por Reine; autoria/licença detalhada a completar",
     url: "",
   },
   {

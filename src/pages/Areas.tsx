@@ -35,6 +35,7 @@ export default function Areas({
   dialogue: (lines: string[]) => void;
 }) {
   const [category, setCategory] = useState("ALL");
+  const [selectedBook, setSelectedBook] = useState<string | null>(null);
   const heading = (tag: string, title: string, description: string) =>
     translateTree(
       <header className="area-heading">
@@ -335,19 +336,18 @@ export default function Areas({
             translateTree(
               <button
                 key={s.id}
-                className={`sport-card sport-${i}`}
+                className={`sport-card sport-${s.sportMeta?.variant ?? i}`}
                 onClick={() => open(s, true)}
               >
                 <div className="scoreboard">
                   <span>
-                    {
-                      [
-                        "HOME  00 : 00  AWAY",
-                        "Q4    98 : 96    00:24",
-                        "▲ 9    ● ● ○    2 OUT",
-                        "P1   +0.000   LAP 42",
-                      ][i]
-                    }
+                    {s.sportMeta?.variant === "football"
+                      ? "MATCHDAY / 90 MIN / 11 × 11"
+                      : s.sportMeta?.variant === "basketball"
+                        ? "SCORE PANEL / 5 × 5 / POSSESSION"
+                        : s.sportMeta?.variant === "baseball"
+                          ? "LINEUP / 9 INNINGS / 3 OUTS"
+                          : "TIMING TOWER / GRID / PIT WALL"}
                   </span>
                 </div>
                 <div className="sport-symbol">
@@ -363,6 +363,19 @@ export default function Areas({
                 </div>
                 <small>{s.subtitle}</small>
                 <h2>{s.name}</h2>
+                <div className="sport-card-identity">
+                  {(s.sportMeta?.teams ?? []).slice(0, 2).map((item) => (
+                    <span key={item.name}>
+                      <span className="team-mark team-mark-small" aria-hidden="true">
+                        {item.logo ? <img src={item.logo} alt="" width="24" height="24" /> : item.fallback}
+                      </span>
+                      {item.name}
+                    </span>
+                  ))}
+                </div>
+                {s.sportMeta?.sideAccount && (
+                  <span className="sport-side-label">{s.sportMeta.sideAccount.handle}</span>
+                )}
                 <span className="sport-open">REGRAS & MINHA RELAÇÃO ↗</span>
               </button>,
             ),
@@ -386,25 +399,36 @@ export default function Areas({
             translateTree(
               <button
                 key={book.id}
-                className={`book book-${i}`}
-                onClick={() => open(book)}
+                className={`book book-${i} ${selectedBook === book.id ? "selected" : ""}`}
+                aria-pressed={selectedBook === book.id}
+                onClick={() => {
+                  setSelectedBook(book.id);
+                  open(book);
+                }}
               >
-                <small>MEMÓRIA / 0{i + 1}</small>
-                <div className="book-ornament">{["IV", "221B", "1939"][i]}</div>
-                <h2>{book.name}</h2>
-                {book.germanTitle && (
-                  <em className="book-german">{book.germanTitle}</em>
-                )}
-                <span>
-                  {book.creator} · {book.year}
+                <span className="book-label">MEMÓRIA / 0{i + 1}</span>
+                <span className="book-cover-wrap">
+                  <img
+                    className="book-cover"
+                    src={book.cover}
+                    alt={`Imagem de ${book.name}`}
+                    width={book.coverWidth}
+                    height={book.coverHeight}
+                    loading="lazy"
+                  />
                 </span>
-                <small>ABRIR LIVRO ↗</small>
+                <span className="book-copy">
+                  <h2>{book.name}</h2>
+                  {book.germanTitle && <em className="book-german">{book.germanTitle}</em>}
+                  <span>{book.creator} · {book.year}</span>
+                </span>
+                <span className="book-open">ABRIR FICHA ↗</span>
               </button>,
             ),
           )}
         </div>
         <p className="footnote">
-          Fichas tipográficas da minha estante — não são reproduções das capas.
+          Capas fornecidas por Reine. Selecione um livro para abrir a ficha e as notas de leitura.
         </p>
         <div className="quote-strip">
           Às vezes a memória ao redor do livro é tão importante quanto o que

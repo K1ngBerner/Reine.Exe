@@ -20,6 +20,10 @@ export default function PartyArt() {
         <div>
           <small>PERSONAL COLLECTION / 01</small>
           <h2>MY PARTY</h2>
+          <p>
+            Obrigado por transformar alguns dos meus Pokémon favoritos nessa
+            arte absurda.
+          </p>
         </div>
         <a href={party.artistUrl} target="_blank" rel="noopener noreferrer">
           {party.credit}

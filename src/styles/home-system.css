@@ -316,3 +316,323 @@
     font-size: 9px;
   }
 }
+
+/* Personal content pass: sports HUDs, real book covers and small identity cues. */
+.sports-grid {
+  align-items: stretch;
+  gap: 18px;
+}
+.sport-card {
+  min-height: 410px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-width: 1px;
+  border-color: color-mix(in srgb, currentColor 28%, transparent);
+  box-shadow: 5px 5px 0 color-mix(in srgb, var(--ink) 13%, transparent);
+}
+.sport-card.sport-football {
+  background: #244e45;
+}
+.sport-card.sport-basketball {
+  background: #87522e;
+}
+.sport-card.sport-baseball {
+  background: #294669;
+}
+.sport-card.sport-f1 {
+  background: #482f3d;
+}
+.sport-card h2 {
+  max-width: 72%;
+  margin-bottom: 14px;
+}
+.sport-card-identity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 0 0 18px;
+  font: 10px/1.4 "IBM Plex Mono", monospace;
+  color: #eff5e8;
+}
+.sport-card-identity > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.team-mark-small {
+  width: 22px !important;
+  height: 22px !important;
+  font-size: 8px !important;
+}
+.team-mark-small img {
+  width: 20px;
+  height: 20px;
+}
+.sport-side-label {
+  margin: auto 0 12px;
+  color: #f3d4df;
+  font: 10px "IBM Plex Mono", monospace;
+}
+.sport-open {
+  margin-top: auto;
+}
+.sport-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(230px, 0.8fr);
+  gap: 30px;
+  align-items: start;
+}
+.sport-tabs {
+  margin-bottom: 20px;
+}
+.sport-copy-panel {
+  min-height: 250px;
+}
+.sport-panel-kicker {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--pink);
+  font: 10px "IBM Plex Mono", monospace;
+  letter-spacing: 0.08em;
+}
+.sport-copy-panel p + p {
+  margin-top: 20px;
+}
+.sport-hud {
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--paper) 75%, var(--accent-purple) 25%);
+  padding: 16px;
+}
+.sport-hud-baseball {
+  border-top: 4px solid #587da1;
+}
+.sport-hud-f1 {
+  border-top: 4px solid #a75478;
+}
+.sport-hud-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font: 10px "IBM Plex Mono", monospace;
+}
+.sport-data-block {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+.sport-data-block:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.sport-data-block > small {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--muted);
+  font: 10px/1.5 "IBM Plex Mono", monospace;
+}
+.sport-data-block p,
+.sport-data-block a,
+.plain-data-list,
+.team-list {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.team-list,
+.plain-data-list {
+  display: grid;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+.team-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.team-mark {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font: 8px "IBM Plex Mono", monospace;
+}
+.team-mark img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+.plain-data-list li::before {
+  content: "—";
+  margin-right: 8px;
+  color: var(--pink);
+}
+.player-watchlist > small {
+  max-width: 200px;
+}
+.sport-side-account a {
+  color: var(--pink);
+  font-family: "IBM Plex Mono", monospace;
+}
+.bookshelf {
+  align-items: end;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr) minmax(0, 0.8fr);
+  gap: clamp(18px, 4vw, 54px);
+  padding: 10px 24px 28px;
+  background: linear-gradient(180deg, transparent 0 92%, #a58d70 92% 100%);
+}
+.book {
+  width: 100%;
+  min-height: 430px;
+  gap: 12px;
+  justify-content: flex-start;
+  padding: 16px 16px 20px;
+  border-left-width: 6px;
+  border-radius: 2px;
+  box-shadow: 5px 5px 0 color-mix(in srgb, var(--ink) 20%, transparent);
+  text-align: left;
+}
+.book-0 {
+  transform: rotate(-1.5deg);
+  margin-bottom: 18px;
+}
+.book-1 {
+  transform: rotate(1.1deg);
+}
+.book-2 {
+  min-height: 340px;
+  margin-bottom: 55px;
+  transform: rotate(-2deg);
+}
+.book:hover,
+.book.selected {
+  transform: translateY(-9px) rotate(0deg);
+  box-shadow: 8px 9px 0 color-mix(in srgb, var(--ink) 25%, transparent);
+}
+.book-label,
+.book-open {
+  display: block;
+  width: 100%;
+  font: 10px "IBM Plex Mono", monospace;
+}
+.book-open {
+  margin-top: auto;
+  color: inherit;
+  opacity: 0.8;
+}
+.book-cover-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 245px;
+  padding: 6px;
+}
+.book-cover {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 245px;
+  object-fit: contain;
+  box-shadow: 5px 5px 0 #1115;
+}
+.book-2 .book-cover-wrap {
+  min-height: 150px;
+}
+.book-2 .book-cover {
+  width: auto;
+  max-width: 122px;
+  max-height: 150px;
+}
+.book-copy {
+  display: block;
+  width: 100%;
+}
+.book-copy h2 {
+  margin: 8px 0 6px;
+  font-size: 24px;
+  line-height: 1;
+}
+.book-copy > span,
+.book-german {
+  display: block;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.book-german {
+  color: #f0d3a7;
+  margin-bottom: 5px;
+}
+.patch-notes {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.patch-notes strong {
+  font: 14px "IBM Plex Mono", monospace;
+  color: var(--pink);
+}
+.patch-notes ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+  font: 13px/1.55 "IBM Plex Mono", monospace;
+}
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+}
+
+@media (max-width: 760px) {
+  .sport-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .sport-copy-panel {
+    min-height: 0;
+  }
+  .sport-hud {
+    order: -1;
+  }
+  .sport-card {
+    min-height: 370px;
+  }
+  .bookshelf {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+    padding-inline: 10px;
+  }
+  .book {
+    min-height: 360px;
+    padding-inline: 10px;
+  }
+  .book-0,
+  .book-1,
+  .book-2 {
+    margin: 0;
+  }
+  .book-2 {
+    grid-column: 1 / -1;
+    width: 55%;
+    justify-self: center;
+  }
+  .book-cover-wrap {
+    min-height: 190px;
+  }
+  .book-cover {
+    max-height: 190px;
+  }
+  .book-copy h2 {
+    font-size: 20px;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
