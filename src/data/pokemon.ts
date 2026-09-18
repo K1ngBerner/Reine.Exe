@@ -1,10 +1,11 @@
 import type { Entry } from "./types";
+import assets from "./assets.json";
 export const pokemon: Entry[] = [
   {
     id: "gym",
     name: "Pokémon This Gym of Mine",
     subtitle: "Dessa vez, o líder é você.",
-    image: "assets/pokemon/gym-screenshot.png",
+    image: assets.gym,
     creator: "Omegas",
     platform: "Standalone · Pokémon Essentials",
     genre: "Fangame / gestão / RPG",
@@ -25,7 +26,7 @@ export const pokemon: Entry[] = [
     id: "elysium",
     name: "Pokémon Elysium",
     subtitle: "Uma estrutura antiga. Outra história.",
-    image: "assets/pokemon/elysium-promo.png",
+    image: assets.elysium,
     creator: "BlackKaiser",
     platform: "Pokémon FireRed 1.0 · GBA",
     genre: "ROM Hack / RPG narrativo",
@@ -48,7 +49,7 @@ export const pokemon: Entry[] = [
     id: "unbound",
     name: "Pokémon Unbound",
     subtitle: "Borrius merece sua própria viagem.",
-    image: "assets/pokemon/unbound-world.png",
+    image: assets.unbound,
     creator: "Skeli e equipe",
     platform: "Pokémon FireRed · GBA",
     genre: "ROM Hack / RPG",

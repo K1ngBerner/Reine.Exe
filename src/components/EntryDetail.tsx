@@ -1,4 +1,5 @@
 import { translateTree } from "../i18n/tree";
+import SafeImage from "./SafeImage";
 import { t } from "../i18n";
 import { useState } from "react";
 import type { Entry, SportTeam } from "../data/types";
@@ -102,7 +103,7 @@ export default function EntryDetail({
   return translateTree(
     <article className="entry-detail">
       {entry.image && (
-        <img
+        <SafeImage
           className="detail-image"
           src={entry.image}
           alt={`Imagem de ${entry.name}`}

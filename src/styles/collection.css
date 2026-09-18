@@ -1,0 +1,118 @@
+.collection-room { --shelf-accent: #c7986d; --shelf-wood: #3b2930; }
+[data-theme="day"] .collection-room { --shelf-accent: #87542c; --shelf-wood: #ccb8ab; }
+.collection-heading h1 { letter-spacing: -.035em; }
+.cabinet-toolbar { display: flex; justify-content: space-between; gap: 12px; padding: 13px 0; border-block: 1px solid var(--line); font: 10px/1.4 "IBM Plex Mono", monospace; color: var(--muted); letter-spacing: .07em; }
+.cabinet-instruction { display: flex; align-items: center; gap: 8px; color: var(--shelf-accent); font-size: 12px; margin: 16px 0; }
+.collection-cabinet { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); grid-template-rows: repeat(5, auto); border: 1px solid var(--line); background: var(--surface); }
+.collection-compartment { display: contents; }
+.shelf-trigger { grid-column: 1; grid-row: var(--row); display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; grid-template-rows: 62px auto; align-items: end; gap: 5px 8px; position: relative; min-width: 0; text-align: left; padding: 13px 16px 16px; border: 0; border-bottom: 7px solid var(--shelf-wood); background: var(--surface); color: var(--text); cursor: pointer; transition: background 180ms ease; }
+.shelf-trigger::after { content: ""; position: absolute; bottom: -7px; left: 0; right: 0; height: 1px; background: var(--line); }
+.shelf-trigger:hover, .shelf-trigger[aria-expanded="true"] { background: var(--panel); }
+.shelf-trigger[aria-expanded="true"] { border-left: 3px solid var(--shelf-accent); padding-left: 13px; }
+.shelf-trigger:focus-visible, .drawer-index button:focus-visible, .collection-reading-link:focus-visible { outline: 2px solid var(--pink); outline-offset: -3px; }
+.shelf-number { grid-column: 1; grid-row: 1 / 3; align-self: start; font: 10px "IBM Plex Mono", monospace; color: var(--muted); }
+.shelf-caption { grid-column: 2; display: flex; flex-direction: column; gap: 3px; }
+.shelf-caption strong { font: 600 22px/.95 "Barlow Condensed", sans-serif; letter-spacing: .02em; }
+.shelf-caption > span { font-size: 10px; color: var(--muted); }
+.shelf-handle { grid-column: 3; grid-row: 2; display: flex; align-items: center; gap: 4px; border-top: 2px solid var(--line); padding-top: 7px; font: 9px "IBM Plex Mono", monospace; color: var(--shelf-accent); }
+.shelf-objects { grid-column: 2 / 4; display: flex; align-items: end; gap: 10px; height: 62px; padding-bottom: 4px; transition: transform 180ms ease; transform-origin: bottom left; }
+.shelf-trigger:hover .shelf-objects, .shelf-trigger[aria-expanded="true"] .shelf-objects { transform: translateX(5px); }
+.shelf-objects > span { display: inline-flex; flex-shrink: 0; }
+.object-switch { width: 105px; height: 45px; padding: 5px; gap: 5px; background: #37323e; border: 1px solid #8f818f; border-radius: 6px; }
+.object-switch > i { width: 12px; background: #708e9b; border-radius: 3px; }
+.object-switch > i:last-child { background: #bd6c79; }
+.object-switch > b { flex: 1; border: 2px solid #706677; background: #19151f; }
+.object-handheld { width: 48px; height: 57px; border: 2px solid #afa3b6; padding: 4px; flex-direction: column; gap: 6px; background: #7a6685; border-radius: 3px; transform: rotate(-5deg); }
+.object-handheld i { display: block; height: 18px; border: 2px solid #b1a3b6; background: #282332; }
+.object-wii { width: 19px; height: 57px; border: 1px solid #b0a1b2; background: #d5cbd7; transform: skewY(-8deg); }
+.object-wii::after { content: ""; width: 2px; height: 29px; background: #554a5b; margin: 8px; }
+.object-controller { align-items: center; justify-content: space-around; width: 63px; height: 34px; border: 2px solid #928499; border-radius: 12px 12px 16px 16px; color: #d4bed9; background: #4c4059; font: 16px monospace; transform: rotate(8deg); }
+.object-controller i { color: #c5a970; font-style: normal; }
+.figure-box { width: 53px; height: 58px; border: 3px solid #a97980; background: #302735; align-items: center; justify-content: center; position: relative; }
+.figure-box:nth-child(2) { height: 51px; width: 61px; border-color: #b19c69; transform: rotate(4deg); }
+.figure-box > i, .figure-plinth > i { width: 11px; height: 25px; border-radius: 50% 50% 3px 3px; background: #a797b1; }
+.figure-box > i::before, .figure-plinth > i::before { content: ""; display: block; width: 12px; height: 12px; border-radius: 50%; background: inherit; transform: translateY(-9px); }
+.figure-box > b { position: absolute; bottom: 0; font: 7px monospace; color: #ded3e4; background: #302735; width: 100%; text-align: center; }
+.figure-plinth { width: 46px; height: 46px; align-items: end; justify-content: center; border-bottom: 6px solid #82758d; }
+.figure-plinth > i { transform: rotate(-10deg); height: 30px; background: #9b8a70; }
+.object-binder { width: 122px; height: 59px; border: 2px solid #a29379; background: #453e34; padding: 5px; gap: 6px; transform: rotate(-3deg); }
+.object-binder > i { border-right: 2px dotted #b8ab97; width: 10px; }
+.object-binder > span { display: grid; flex: 1; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+.object-binder b { border: 1px solid #b6a78a; background: #776b56; }
+.binder-heart { color: var(--shelf-accent); align-self: center; }
+.objects-books, .objects-manga { gap: 3px; }
+.object-spine { height: 49px; width: 17px; background: #79647d; border: 1px solid #ab97a4; align-items: center; justify-content: center; }
+.object-spine:nth-child(2n) { height: 43px; }
+.object-spine:nth-child(3n) { background: #6c7881; width: 23px; height: 58px; }
+.object-spine:nth-child(4n) { background: #958061; height: 47px; }
+.object-spine i { width: 3px; height: 25px; border-block: 2px solid #d1c1c7; }
+.object-spine:last-of-type { transform: rotate(10deg); transform-origin: bottom center; margin-left: 3px; }
+.book-stack { display: flex; flex-direction: column; gap: 2px; margin-left: 8px; }
+.book-stack i { width: 48px; height: 10px; background: #b4a799; border: 2px solid #887584; }
+.objects-manga .object-spine { background: #c6bdc8; width: 13px; height: 49px; border: 1px solid #877e8e; }
+.objects-manga .object-spine:nth-child(4n) { height: 55px; background: #a997a9; }
+.objects-manga .object-spine i { width: 100%; height: 5px; border: 0; background: #756079; margin-top: 23px; }
+.collection-drawer, .cabinet-empty { grid-column: 2; grid-row: 1 / 6; min-width: 0; padding: 20px; border-left: 1px solid var(--line); background: var(--panel); }
+.collection-drawer[hidden] { display: none; }
+.drawer-index { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 10px "IBM Plex Mono", monospace; color: var(--muted); margin-bottom: 25px; }
+.drawer-index button { padding: 5px; border: 0; background: none; color: var(--text); cursor: pointer; }
+.drawer-paper { position: relative; border: 1px solid var(--line); padding: 24px; background: var(--surface); animation: drawer-in 200ms ease-out; }
+.drawer-tab { display: block; width: fit-content; padding: 5px 12px; margin-top: -44px; margin-bottom: 22px; background: var(--shelf-wood); color: var(--text); font: 10px "IBM Plex Mono", monospace; }
+.drawer-paper > small, .collection-group h3, .collection-stats dt { font: 9px/1.5 "IBM Plex Mono", monospace; letter-spacing: .06em; color: var(--muted); }
+.drawer-paper h2 { font: 600 38px/1 "Barlow Condensed", sans-serif; margin: 8px 0 22px; }
+.drawer-story { font-size: 14px; line-height: 1.85; margin-bottom: 25px; }
+.collection-stats { display: flex; flex-wrap: wrap; gap: 20px; padding: 17px 0; border-block: 1px solid var(--line); margin-bottom: 20px; }
+.collection-stats dd { font: 500 23px/1.2 "Barlow Condensed", sans-serif; color: var(--shelf-accent); margin: 5px 0 0; }
+.collection-group { margin-top: 20px; }
+.collection-group h3 { margin-bottom: 10px; }
+.collection-group ul { display: flex; flex-wrap: wrap; gap: 7px 15px; padding: 0; list-style: none; }
+.collection-group li { font-size: 12px; border-bottom: 1px solid var(--line); padding-bottom: 4px; }
+.compartment-consoles .collection-group ul { display: grid; grid-template-columns: 1fr 1fr; }
+.drawer-signature { display: block; color: var(--muted); margin-top: 25px; text-align: right; font: italic 18px Georgia, serif; }
+.collection-reading-link { display: inline-block; margin-top: 22px; color: var(--shelf-accent); font-size: 12px; }
+.cabinet-empty { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: var(--muted); }
+.cabinet-empty > span { font: 12px "IBM Plex Mono", monospace; }
+.cabinet-empty p { max-width: 230px; font-size: 14px; line-height: 1.7; }
+.collection-footnote { margin-top: 12px; color: var(--muted); font: 9px/1.5 "IBM Plex Mono", monospace; }
+@keyframes drawer-in { from { opacity: .5; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1000px) and (min-width: 761px) {
+  .collection-cabinet { grid-template-columns: minmax(260px, .9fr) minmax(0, 1fr); }
+  .shelf-trigger { padding-inline: 10px; }
+  .shelf-trigger[aria-expanded="true"] { padding-left: 7px; }
+  .shelf-caption strong { font-size: 20px; }
+  .shelf-caption > span { font-size: 9px; }
+  .shelf-handle { font-size: 8px; }
+  .shelf-objects { gap: 6px; }
+  .objects-manga { gap: 2px; }
+  .object-controller { display: none !important; }
+  .book-stack { display: none !important; }
+  .collection-drawer { padding: 14px; }
+  .drawer-paper { padding: 18px; }
+  .drawer-tab { margin-top: -38px; }
+}
+@media (max-width: 760px) {
+  .collection-cabinet, .collection-compartment { display: block; }
+  .collection-drawer { border-left: 0; border-bottom: 7px solid var(--shelf-wood); padding: 18px 12px; }
+  .shelf-trigger { width: 100%; }
+  .drawer-paper { padding: 20px; }
+  .drawer-tab { margin-top: -40px; }
+  .cabinet-empty { display: none; }
+  .cabinet-toolbar { font-size: 8px; }
+  .drawer-story { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shelf-trigger, .shelf-objects { transition: none; }
+  .shelf-trigger:hover .shelf-objects, .shelf-trigger[aria-expanded="true"] .shelf-objects { transform: none; }
+  .drawer-paper { animation: none; }
+}
+@media (max-width: 370px) {
+  .shelf-trigger { padding-inline: 10px; grid-template-columns: 18px minmax(0, 1fr) auto; gap: 5px; }
+  .shelf-trigger[aria-expanded="true"] { padding-left: 7px; }
+  .shelf-objects { gap: 6px; }
+  .objects-books, .objects-manga { gap: 2px; }
+  .object-controller, .book-stack { display: none !important; }
+  .objects-manga .object-spine { width: 12px; }
+  .shelf-caption > span { font-size: 9px; }
+  .shelf-handle { font-size: 8px; }
+  .drawer-paper { padding-inline: 14px; }
+}

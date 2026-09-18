@@ -7,6 +7,8 @@ export default ts.config(
   { ignores: ["dist", "node_modules", "qa-results"] },
   js.configs.recommended,
   ...ts.configs.recommended,
+  { files: ["scripts/**/*.mjs"], languageOptions: { globals: globals.node } },
+  { files: ["scripts/verify-production.mjs"], languageOptions: { globals: globals.browser } },
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: { globals: globals.browser },

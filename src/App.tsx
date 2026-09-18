@@ -1,4 +1,6 @@
 import { translateTree } from "./i18n/tree";
+import SafeImage from "./components/SafeImage";
+import assets from "./data/assets.json";
 import {
   lazy,
   Suspense,
@@ -278,8 +280,8 @@ export default function App() {
                     ])
                   }
                 >
-                  <img
-                    src={`assets/ui/${blink ? "blink" : "idle"}.png`}
+                  <SafeImage
+                    src={blink ? assets.doodBlink : assets.doodIdle}
                     width="75"
                     height="84"
                     alt="Dood, personagem guia"
@@ -432,7 +434,7 @@ export default function App() {
                 <dt>VISITAS</dt>
                 <dd>{save.visits}</dd>
                 <dt>ÁREAS VISITADAS</dt>
-                <dd>{save.areas.length}/8</dd>
+                <dd>{save.areas.length}/{navigation.length}</dd>
                 <dt>BADGES</dt>
                 <dd>{save.badges.length}/7</dd>
                 <dt>SEGREDOS</dt>

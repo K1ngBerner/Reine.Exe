@@ -1,4 +1,5 @@
 import type { Entry } from "./types";
+import assets from "./assets.json";
 export const books: Entry[] = [
   {
     id: "labyrinth",
@@ -7,7 +8,7 @@ export const books: Entry[] = [
     creator: "Rick Riordan",
     year: "2008",
     genre: "Fantasia / mitologia",
-    cover: "assets/books/battle-of-the-labyrinth.png",
+    cover: assets.labyrinth,
     coverWidth: 667,
     coverHeight: 1000,
     context:
@@ -24,7 +25,7 @@ export const books: Entry[] = [
     creator: "Arthur Conan Doyle",
     year: "1890",
     genre: "Mistério / investigação",
-    cover: "assets/books/sign-of-four.png",
+    cover: assets.signFour,
     coverWidth: 1365,
     coverHeight: 2048,
     context:
@@ -45,7 +46,7 @@ export const books: Entry[] = [
     usTitle: "The Problem of the Green Capsule",
     germanTitle: "Die grüne Kapsel",
     genre: "Mystery / Detective Fiction / Impossible Crime",
-    cover: "assets/books/green-capsule.png",
+    cover: assets.greenCapsule,
     coverWidth: 225,
     coverHeight: 250,
     context:

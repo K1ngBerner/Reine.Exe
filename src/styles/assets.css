@@ -1,0 +1,30 @@
+.asset-fallback {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px dashed var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  text-align: center;
+  font: 10px/1.5 "IBM Plex Mono", monospace;
+  overflow-wrap: anywhere;
+}
+.asset-fallback strong { font-weight: 500; }
+.team-mark .asset-fallback { padding: 0; border: 0; background: none; color: inherit; }
+.team-mark[data-team="fer"] { background: #21172f; color: #ece8f2; }
+.team-mark-fallback { display: grid; place-items: center; width: 30px; height: 30px; border: 1px solid var(--line); font: 9px "IBM Plex Mono", monospace; }
+.book-cover.asset-fallback { width: 165px !important; min-height: 185px; box-shadow: none; }
+.book-editorial { display: flex; flex-direction: column; justify-content: space-between; gap: 26px; padding: 10px; }
+.book-editorial strong { color: var(--text); font: 22px/1.05 "Barlow Condensed", sans-serif; }
+.book-2 .book-cover.asset-fallback { min-height: 130px; }
+.book-2 .book-editorial { padding: 0; gap: 8px; }
+.book-2 .book-editorial strong { font-size: 16px; }
+.portrait-wrap > .asset-fallback, .party-original > .asset-fallback, .motion-asset > .asset-fallback { width: 100% !important; }
+.motion-asset { position: relative; }
+.party-strip > .asset-fallback { position: relative; width: 100% !important; min-height: 75px; }
+.npc-line .asset-fallback { width: 75px; height: 84px; font-size: 8px; padding: 3px; }
+.dialogue > .asset-fallback { flex-shrink: 0; max-height: 180px; }

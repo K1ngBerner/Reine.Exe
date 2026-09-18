@@ -1,9 +1,10 @@
 import { translateTree } from "../i18n/tree";
 import { party } from "../data/party";
+import SafeImage from "./SafeImage";
 export function PartyStrip() {
   return translateTree(
     <div className="party-strip">
-      <img
+      <SafeImage
         src={party.banner}
         width="8880"
         height="1168"
@@ -36,7 +37,7 @@ export default function PartyArt() {
         rel="noopener noreferrer"
         aria-label="Ver ilustração MY PARTY em tamanho original"
       >
-        <img
+        <SafeImage
           src={party.artwork}
           width="5688"
           height="3971"

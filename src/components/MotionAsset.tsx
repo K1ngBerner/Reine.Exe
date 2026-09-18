@@ -1,4 +1,5 @@
 import { translateTree } from "../i18n/tree";
+import SafeImage from "./SafeImage";
 import { useEffect, useRef, useState } from "react";
 /** Optional replacement for heavy GIFs. No clip is fetched until interaction. */
 export default function MotionAsset({
@@ -16,6 +17,8 @@ export default function MotionAsset({
   const video = useRef<HTMLVideoElement>(null);
   const [hover, setHover] = useState(false);
   const [visible, setVisible] = useState(true);
+  const [failedClip, setFailedClip] = useState<string>();
+  const [playing, setPlaying] = useState(false);
   const [reduced, setReduced] = useState(
     () => matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
@@ -32,7 +35,7 @@ export default function MotionAsset({
     if (root.current) observer.observe(root.current);
     return () => observer.disconnect();
   }, []);
-  const animate = !!clip && visible && !reduced && (hover || selected);
+  const animate = !!clip && clip !== failedClip && visible && !reduced && (hover || selected);
   useEffect(() => {
     if (animate) void video.current?.play().catch(() => {});
     else video.current?.pause();
@@ -47,11 +50,14 @@ export default function MotionAsset({
       onFocus={() => setHover(true)}
       onBlur={() => setHover(false)}
     >
-      {clip ? (
+      <SafeImage src={poster} alt={alt} width="640" height="360" loading="lazy" />
+      {clip && clip !== failedClip && (
         <video
+          style={{ position: "absolute", inset: 0, opacity: playing && animate ? 1 : 0 }}
+          onPlaying={() => setPlaying(true)}
+          onError={() => setFailedClip(clip)}
           ref={video}
           src={animate ? clip : undefined}
-          poster={poster}
           aria-label={alt}
           width="640"
           height="360"
@@ -60,8 +66,6 @@ export default function MotionAsset({
           playsInline
           preload="none"
         />
-      ) : (
-        <img src={poster} alt={alt} width="640" height="360" loading="lazy" />
       )}
     </div>,
   );

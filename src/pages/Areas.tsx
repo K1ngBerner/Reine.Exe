@@ -21,11 +21,10 @@ import { links } from "../data/links";
 import PartyArt, { PartyStrip } from "../components/PartyArt";
 import MotionAsset from "../components/MotionAsset";
 import TeamIdentity from "../components/TeamIdentity";
-const gameImages = [
-  "persona-royal.jpg",
-  "pokemon-white-screen.jpg",
-  "conker-screenshot.jpg",
-];
+import SafeImage from "../components/SafeImage";
+import CollectionRoom from "./CollectionRoom";
+import assets from "../data/assets.json";
+const gameImages = [assets.persona, assets.pokemonWhite, assets.conker];
 export default function Areas({
   area,
   open,
@@ -127,12 +126,12 @@ export default function Areas({
                 className={`game-card game-${i}`}
                 key={game.id}
                 onClick={() =>
-                  open({ ...game, image: `assets/games/${gameImages[i]}` })
+                  open({ ...game, image: gameImages[i] })
                 }
               >
                 <div className="game-image">
                   <MotionAsset
-                    poster={`assets/games/${gameImages[i]}`}
+                    poster={gameImages[i]}
                     clip={game.clip}
                     alt={game.name}
                   />
@@ -236,7 +235,7 @@ export default function Areas({
                       className="project-card"
                     >
                       <span className="project-number">0{i + 1}</span>
-                      <img
+                      <SafeImage
                         src={p.image}
                         alt={`Screenshot de ${p.name}`}
                         width="240"
@@ -271,7 +270,7 @@ export default function Areas({
               onClick={() =>
                 open({
                   ...games[1],
-                  image: "assets/games/pokemon-white-screen.jpg",
+                  image: assets.pokemonWhite,
                 })
               }
             >
@@ -449,6 +448,7 @@ export default function Areas({
                           </span>
                         ))}
                       </div>
+                      <small>PLAYERS</small>
                       <span className="sport-secondary-line">Ohtani · Sasaki</span>
                     </div>
                   </div>
@@ -509,13 +509,14 @@ export default function Areas({
               >
                 <span className="book-label">MEMÓRIA / 0{i + 1}</span>
                 <span className="book-cover-wrap">
-                  <img
+                  <SafeImage
                     className="book-cover"
                     src={book.cover}
                     alt={`Imagem de ${book.name}`}
                     width={book.coverWidth}
                     height={book.coverHeight}
                     loading="lazy"
+                    fallback={<span className="book-editorial"><strong>{book.name}</strong><span>{book.creator}</span></span>}
                   />
                 </span>
                 <span className="book-copy">
@@ -537,19 +538,20 @@ export default function Areas({
         </div>
       </>,
     );
+  if (area === "collection") return <CollectionRoom />;
   if (area === "2doods")
     return translateTree(
       <>
         {heading(
-          "07 / BROADCAST STATION",
+          "08 / BROADCAST STATION",
           "2DOODS.EXE",
           "A conversa continua depois do game over.",
         )}
         <div className="broadcast">
           <div className="broadcast-screen">
             <span className="on-air">● ON AIR</span>
-            <img
-              src="assets/brand/2doods.jpg"
+            <SafeImage
+              src={assets.doods}
               alt="Logo 2Doods"
               width="240"
               height="240"
@@ -611,7 +613,7 @@ export default function Areas({
   return translateTree(
     <>
       {heading(
-        "08 / BUSINESS DISTRICT",
+        "09 / BUSINESS DISTRICT",
         "Ok, as coisas sérias.",
         "Você encontrou a saída para o meu lado profissional.",
       )}

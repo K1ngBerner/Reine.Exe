@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { navigation } from "../data/navigation";
 export interface Save {
   firstVisit: string;
   visits: number;
@@ -18,7 +19,7 @@ export const achievements = [
   { id: "sports", name: "Sports Nerd", hint: "Abra os quatro esportes." },
   { id: "books", name: "Bookworm", hint: "Abra os três livros." },
   { id: "dooder", name: "Dooder", hint: "Entre na 2Doods." },
-  { id: "grass", name: "Touch Grass", hint: "Visite as oito grandes áreas." },
+  { id: "grass", name: "Touch Grass", hint: "Visite todas as áreas." },
 ];
 function read(): Save {
   try {
@@ -90,7 +91,7 @@ export function useSave() {
           all(["football", "basketball", "baseball", "f1"]) ? "sports" : "",
           all(["labyrinth", "sign-four", "green-capsule"]) ? "books" : "",
           next.areas.includes("2doods") ? "dooder" : "",
-          next.areas.length === 8 ? "grass" : "",
+          navigation.every(({ id }) => next.areas.includes(id)) ? "grass" : "",
         ].filter(Boolean);
         const added = earned.filter((x) => !s.badges.includes(x));
         if (added.length)

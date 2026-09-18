@@ -1,4 +1,6 @@
 import { translateTree } from "../i18n/tree";
+import SafeImage from "./SafeImage";
+import assets from "../data/assets.json";
 import { t } from "../i18n";
 import { useEffect, useState } from "react";
 export default function DialogueBox({
@@ -25,8 +27,8 @@ export default function DialogueBox({
   }, [text, typing]);
   return translateTree(
     <div className="dialogue">
-      <img
-        src={`assets/ui/${typing && count < text.length ? "talking" : "happy"}.png`}
+      <SafeImage
+        src={typing && count < text.length ? assets.doodTalking : assets.doodHappy}
         alt="Dood, o guia deste save"
         width="160"
         height="180"

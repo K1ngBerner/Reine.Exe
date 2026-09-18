@@ -1,4 +1,4 @@
-import { useState } from "react";
+import SafeImage from "./SafeImage";
 import type { SportTeam } from "../data/types";
 
 export default function TeamIdentity({
@@ -8,28 +8,22 @@ export default function TeamIdentity({
   team: SportTeam;
   className?: string;
 }) {
-  const [imageAvailable, setImageAvailable] = useState(Boolean(team.logo));
   const markClass = [
     "team-mark",
-    imageAvailable ? "" : "team-mark-fallback",
     className,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <span className={markClass} aria-hidden="true">
-      {team.logo && imageAvailable ? (
-        <img
+    <span className={markClass} data-team={team.fallback.toLowerCase()} aria-hidden="true">
+        <SafeImage
           src={team.logo}
           alt=""
           width="30"
           height="30"
-          onError={() => setImageAvailable(false)}
+          fallback={<span className="team-mark-fallback">{team.fallback}</span>}
         />
-      ) : (
-        <span>{team.fallback}</span>
-      )}
     </span>
   );
 }

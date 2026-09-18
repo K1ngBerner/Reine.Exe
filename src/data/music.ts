@@ -1,5 +1,6 @@
+import assets from "./assets.json";
 export const music = {
-  src: "audio/background-track.mp3",
+  src: assets.music,
   title: "Inception",
   artist: "Cyberpunk Darksynth · arquivo fornecido",
   streaming:

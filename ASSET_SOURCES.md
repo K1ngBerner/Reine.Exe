@@ -36,7 +36,7 @@ No ROMs were downloaded.
 The book covers below were supplied directly by Reine in the workspace. They are copied unchanged; no replacement covers, upscaling or generated artwork was used.
 
 | Local file | Credit / provenance |
-|---|---|---|
+|---|---|
 | `public/assets/books/battle-of-the-labyrinth.png` | User-provided cover image: `H:/battle-of-the-labyrinth.png` |
 | `public/assets/books/sign-of-four.png` | User-provided cover image: `H:/sign-of-four.png` |
 | `public/assets/books/green-capsule.png` | User-provided cover image: `H:/green-capsule.png` |
@@ -52,4 +52,12 @@ Sports marks are downloaded once by `scripts/fetch-sports-assets.mjs` and stored
 | `public/assets/sports/teams/los-angeles-dodgers.svg` | [Los Angeles Dodgers Logo](https://commons.wikimedia.org/wiki/File:Los_Angeles_Dodgers_Logo.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/0/0e/Los_Angeles_Dodgers_Logo.svg) |
 | `public/assets/sports/teams/doosan-bears.svg` | [Doosan Bears insignia](https://commons.wikimedia.org/wiki/File:Doosan_Bears_insignia.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/a/a2/Doosan_Bears_insignia.svg) |
 | `public/assets/sports/teams/yomiuri-giants.svg` | [Yomiuri Giants logo](https://commons.wikimedia.org/wiki/File:Yomiuri_Giants_logo.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/f/f5/Yomiuri_Giants_logo.svg) |
-| `public/assets/sports/teams/ferrari.svg` | [F1 Team Icon — Ferrari (2009)](https://commons.wikimedia.org/wiki/File:F1_Team_Icon_-_Ferrari%282009%29.svg) | [SVG](https://upload.wikimedia.org/wikipedia/commons/8/8e/F1_Team_Icon_-_Ferrari%282009%29.svg) |
+| `public/assets/sports/teams/ferrari.svg` | [Official Formula 1 Ferrari team page](https://www.formula1.com/en/teams/ferrari) | [Original SVG](https://media.formula1.com/image/upload/v1740000001/common/f1/2025/ferrari/2025ferrarilogolight.svg) |
+
+### Asset integrity pass — 2026-09-17
+
+- Replaced the Ferrari racing-car illustration with the actual team mark distributed by Formula 1. Ferrari's own website returned a JavaScript bot challenge; Commons had supplied an illustration rather than the mark. The official championship is the institutional source used here. Download: HTTP 200, `image/svg+xml`, 45,709 bytes. No tracing, recoloring or generation.
+- All three supplied covers match the original files on H: by SHA-256. All are genuine PNGs; none needed renaming or conversion. The small Green Capsule cover stays below its native resolution.
+- Local runtime URLs are centralized in `src/data/assets.json`; source URLs above are provenance, never browser image dependencies.
+- Collection objects are abstract HTML/CSS shelf representations. They are not product photos, logos or depictions of specific owned figures/cards. Inventory claims only come from Reine's text in `src/data/collection.ts`.
+- The older game-image table also documents research candidates; only files listed in the manifest are shipped (no `gym-title`, `unbound-title` or `pokemon-white-promo` dependency).

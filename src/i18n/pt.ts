@@ -1,5 +1,11 @@
 /** Central Portuguese UI catalog. Source-copy keys also localize existing data without duplicating pages. */
 export const pt: Record<string, string> = {
+  "Logos locais: Wikimedia Commons e Formula 1 (Ferrari). Fontes detalhadas em ASSET_SOURCES.md.": "Logos locais: Wikimedia Commons e Formula 1 (Ferrari). Fontes detalhadas em ASSET_SOURCES.md.",
+  COLLECTION: "COLEÇÃO",
+  STORAGE: "ACERVO",
+  "Visite todas as áreas.": "Visite todas as áreas.",
+  "08 / BROADCAST STATION": "08 / ESTAÇÃO DE TRANSMISSÃO",
+  "09 / BUSINESS DISTRICT": "09 / DISTRITO COMERCIAL",
   "Classe:": "Classe:",
   "SAVE SECRETO ENCONTRADO.": "SAVE SECRETO ENCONTRADO.",
   "Você trouxe controles de outro jogo. Funcionou mesmo assim.":

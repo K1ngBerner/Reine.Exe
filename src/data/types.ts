@@ -51,5 +51,6 @@ export type Area =
   | "pokemon"
   | "sports"
   | "books"
+  | "collection"
   | "2doods"
   | "work";

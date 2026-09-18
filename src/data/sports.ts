@@ -1,9 +1,10 @@
 import type { Entry } from "./types";
+import assets from "./assets.json";
 
 const team = (name: string, fallback: string, logo?: string) => ({
   name,
   fallback,
-  logo: logo ? `/assets/sports/teams/${logo}` : undefined,
+  logo,
 });
 
 export const sports: Entry[] = [
@@ -20,8 +21,8 @@ export const sports: Entry[] = [
       overview:
         "Vejo futebol desde antes de conseguir lembrar quando comecei. Flamengo, Bayern e praticamente qualquer campeonato que estiver passando.",
       teams: [
-        team("CR Flamengo", "FLA", "flamengo.svg"),
-        team("FC Bayern München", "FCB", "bayern-munich.svg"),
+        team("CR Flamengo", "FLA", assets.flamengo),
+        team("FC Bayern München", "FCB", assets.bayernMunich),
       ],
       seenIrl: ["Brazil", "Spain", "Argentina", "Germany"],
     },
@@ -38,7 +39,7 @@ export const sports: Entry[] = [
       variant: "basketball",
       overview:
         "Começou com Kuroko no Basket, virou escolinha e acabou se tornando meu esporte favorito. O Bulls infelizmente veio junto.",
-      teams: [team("Chicago Bulls", "CHI", "chicago-bulls.svg")],
+      teams: [team("Chicago Bulls", "CHI", assets.chicagoBulls)],
       otherConnection: "Flamengo Basketball",
       leagues: ["NBA", "NBB", "NCAA"],
       seenIrl: ["NBA", "Washington Wizards", "Brooklyn Nets"],
@@ -57,10 +58,10 @@ export const sports: Entry[] = [
       overview:
         "Cubs desde 2014. Dodgers principalmente porque qualquer jogo com Ohtani ou Sasaki já consegue minha atenção.",
       teams: [
-        team("Chicago Cubs", "CHC", "chicago-cubs.svg"),
-        team("Los Angeles Dodgers", "LAD", "los-angeles-dodgers.svg"),
-        team("Doosan Bears", "DOO", "doosan-bears.svg"),
-        team("Yomiuri Giants", "YGI", "yomiuri-giants.svg"),
+        team("Chicago Cubs", "CHC", assets.chicagoCubs),
+        team("Los Angeles Dodgers", "LAD", assets.losAngelesDodgers),
+        team("Doosan Bears", "DOO", assets.doosanBears),
+        team("Yomiuri Giants", "YGI", assets.yomiuriGiants),
       ],
       leagues: ["MLB", "NPB", "KBO", "Japanese High School Baseball"],
       players: ["Shohei Ohtani", "Roki Sasaki"],
@@ -78,7 +79,7 @@ export const sports: Entry[] = [
       variant: "f1",
       overview:
         "A temporada é enxuta, as histórias são boas e eu sempre acabo esperando a corrida do fim de semana.",
-      teams: [team("Scuderia Ferrari", "FER", "ferrari.svg")],
+      teams: [team("Scuderia Ferrari", "FER", assets.ferrari)],
       favorites: ["Max Verstappen", "Charles Leclerc"],
       sideAccount: { handle: "@PapoDeBagre", url: "https://x.com/PapoDeBagre" },
     },

@@ -1,6 +1,6 @@
 # REINE.EXE
 
-Site pessoal em React + TypeScript + Vite. Oito áreas, estética de save de portátil, conteúdo em português e armazenamento exclusivamente local para progresso.
+Site pessoal em React + TypeScript + Vite. Nove áreas, conteúdo PT/EN, temas dia/noite e armazenamento exclusivamente local para progresso.
 
 ## Executar
 
@@ -9,6 +9,8 @@ Node.js 22.12+ (ou 24 LTS) e npm:
 ```sh
 npm install
 npm run dev
+# Após adicionar/trocar assets, inclua os arquivos no índice do Git:
+git add public src/data/assets.json .gitattributes
 npm run build
 npm run lint
 npm run preview
@@ -22,7 +24,8 @@ O ambiente de criação disponibilizou pnpm. O `pnpm-lock.yaml` fixa as versões
 src/
   App.tsx                 # shell, navegação, intro, mapa e coordenação
   pages/Home.tsx          # página inicial e Trainer Card
-  pages/Areas.tsx         # sete áreas secundárias, carregadas sob demanda
+  pages/Areas.tsx         # áreas secundárias, carregadas sob demanda
+  pages/CollectionRoom.tsx # estante interativa / gavetas mobile
   components/
     Window.tsx            # dialog nativo, foco, Escape, drag desktop
     EntryDetail.tsx       # fichas e abas dos esportes
@@ -49,10 +52,13 @@ public/audio/             # faixa fornecida pelo usuário
 | Canal e vídeos | `src/data/2doods.ts` |
 | YouTube e portfólio | `src/data/links.ts` |
 | Créditos e fontes | `src/data/credits.ts` |
+| Collection: textos PT/EN, itens, grupos e destaques | `src/data/collection.ts` |
+| Caminhos de todas as imagens e do áudio | `src/data/assets.json` |
+| Atividades atuais | `src/data/current.ts` |
 | Faixa, título, autoria e streaming | `src/data/music.ts` |
 | Regras das conquistas | `src/hooks/useSave.ts` |
 
-As seis opiniões fornecidas estão preservadas integralmente, com pequenos ajustes tipográficos. Os dados do livro The Problem of the Green Capsule foram corrigidos conforme fornecido pelo usuário. Relatos pessoais não fornecidos permanecem vazios. O jogo e o livro atuais ficam vazios até serem informados.
+Os relatos pessoais fornecidos estão preservados. Relatos ainda não fornecidos permanecem vazios. As atividades atuais ficam em `src/data/current.ts`, com versões PT/EN.
 
 ## Imagens e animações
 
@@ -60,9 +66,41 @@ As seis opiniões fornecidas estão preservadas integralmente, com pequenos ajus
 - Personagem: `public/assets/ui/idle.png`, `talking.png`, `blink.png`, `happy.png`.
 - Logo: `public/assets/brand/2doods.jpg`.
 - Jogos: `public/assets/games/`; a associação está em `src/pages/Areas.tsx`.
-- Projetos Pokémon: `public/assets/pokemon/`; caminhos em `src/data/pokemon.ts`.
+- Projetos Pokémon: `public/assets/pokemon/`.
 - Os hobbies usam linhas de menu, sem animação contínua no hover. Não há GIFs falsamente atribuídos a jogos. Novos GIFs podem ficar em `public/assets/ui/`; prefira vídeo WebM/MP4 com poster e o componente `MotionAsset` para idle/hover/selected e pausa fora da tela.
-- As fichas da estante são tipográficas, não capas inventadas. As capas reais não são necessárias para o funcionamento.
+- Livros: três capas originais em `public/assets/books/`, sem conversão ou upscale. Green Capsule é exibida pequena. O fallback editorial é apenas proteção contra falhas.
+
+## Pipeline de assets
+
+`src/data/assets.json` é a fonte única de URLs locais. `/assets/...` corresponde a `public/assets/...`; nunca use `/public/...`, caminhos do Windows ou hotlinks em componentes.
+
+`npm run assets:check` verifica nomes normalizados, existência, capitalização exata (inclusive no Windows), assinatura/extensão, dependências externas em SVGs e inclusão no índice do Git. Imagens novas em `public` precisam entrar no manifest. O checker também impede `<img>` fora de `SafeImage` e caminhos soltos no código. Assets alterados precisam ser adicionados ao Git antes do build. `.gitattributes` impede alteração dos bytes originais por conversão CRLF/LF.
+
+`npm run build` executa o checker antes do Vite e compara cada arquivo de `dist` byte a byte depois. Sem metadados Git (por exemplo ZIP), essa parte específica é avisada e pulada; todas as verificações físicas continuam obrigatórias. Incluir no índice não equivale a commit ou push.
+
+Todos os componentes de imagem usam `SafeImage`: sigla para times, título/autor para livros e painel editorial para arte ausente. Ao falhar, o `<img>` é removido; outra URL pode carregar normalmente.
+
+Manutenção das logos: `npm run assets:sports` (ou `pnpm assets:sports`). O script não roda no site nem durante o build; preserva arquivos válidos existentes. Edite `teams` em `scripts/fetch-sports-assets.mjs` e a origem em `ASSET_SOURCES.md`. Para renovar um único arquivo: `npm run assets:sports -- --force --only=ferrari`. Downloads têm timeout, checagem de HTTP/MIME/assinatura e gravação atômica; falhas não apagam a versão anterior nem criam arquivos vazios.
+
+## Collection Room
+
+Acesso: menu **COLEÇÃO / COLLECTION**, mapa, lista da Home ou `/#collection`. Cinco compartimentos compartilham a mesma estante: consoles, figures, TCG, livros físicos e mangás. No desktop a ficha abre ao lado; em telas pequenas abre logo abaixo da prateleira. Enter/Espaço abrem e fecham; Escape dentro da ficha fecha e devolve o foco ao puxador. Animações respeitam movimento reduzido.
+
+Edite `collection` e `collectionUI` em `src/data/collection.ts`; cada texto tem `pt` e `en`. Não é necessário baixar imagens para esta área: os objetos são representações abstratas em CSS, não produtos ou cartas inventados. A coleção física de livros é distinta das três leituras favoritas.
+
+## Testar a produção
+
+```sh
+npm run test:assets
+npm run build
+npm run lint
+npx playwright install chromium
+npm run preview -- --port 4173 --strictPort
+# Em outro terminal:
+npm run test:production
+```
+
+O teste abre o navegador headless contra o preview, verifica cada URL/MIME/byte/decodificação, todas as áreas e créditos em desktop/mobile × PT/EN × dia/noite, gavetas por teclado, larguras de 320–1024 px e falhas intencionais de imagens. Screenshots e relatório são salvos em `qa-results/` (ignorado pelo Git). Cancelamentos de preload de áudio durante navegação são registrados separadamente; 404, falhas reais e erros de console reprovam.
 
 ## Música
 
@@ -86,11 +124,11 @@ Segredos: código ↑ ↑ ↓ ↓ ← → ← → B A; cinco cliques no Trainer 
 
 1. Execute `npm run build` e `npm run lint`.
 2. Publique o conteúdo de `dist` em um host estático (GitHub Pages, Cloudflare Pages, Netlify etc.).
-3. O `base: './'` funciona em subdiretórios, incluindo GitHub Pages. Navegação com hash não exige rewrites no servidor.
-4. No GitHub Pages, use um workflow com Node, `npm install`, `npm run build`, upload de `dist` e deploy-pages; habilite Pages por GitHub Actions nas configurações do repositório.
-5. Em hosts com build automático: comando `npm run build`; saída `dist`. Não publique `node_modules` ou arquivos de credenciais.
+3. O projeto agora usa `base: '/'` e assets absolutos de raiz, para Netlify/domínio raiz. Não publique sob subdiretório sem adaptar a resolução central de URLs. Navegação por hash não precisa de rewrites.
+4. `netlify.toml` define Node 22, comando `npm run build` e saída `dist`.
+5. Confirme `git status`, faça commit/push dos assets e do código e publique a mesma revisão. Nunca publique `public` sozinho: a saída completa é `dist`. Não publique `node_modules` ou credenciais.
 
-`.openai/hosting.json` registra a hospedagem Sites vinculada a este projeto. A publicação inicial, quando concluída, é privada e não muda automaticamente a audiência.
+Esta revisão foi validada no preview da build, não publicada. A auditoria de `https://reineexe.netlify.app` confirmou que as três capas e as oito logos retornam 404 no deploy antigo. Veja `ASSET_AUDIT.md`. Depois de publicar, compare novamente com `npm run assets:audit-deploy -- https://reineexe.netlify.app`: o comando é somente leitura e reprova arquivos ausentes ou diferentes da versão local.
 
 ## Conteúdo que falta completar
 

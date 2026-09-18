@@ -33,7 +33,7 @@ export default function AreaMenu({
         <span className="selection-cursor" aria-hidden="true">
           ▸
         </span>
-        <small>00</small>
+        <small>01</small>
         <strong>SAVE SCREEN</strong>
         <span>HOME</span>
       </button>
@@ -43,7 +43,7 @@ export default function AreaMenu({
             <span className="selection-cursor" aria-hidden="true">
               ▸
             </span>
-            <small>0{i + 1}</small>
+            <small>0{i + 2}</small>
             <strong>{place}</strong>
             <span>{id === "work" ? "PORTFOLIO" : name}</span>
             <i

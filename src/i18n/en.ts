@@ -1,5 +1,11 @@
 /** English translations preserve the meaning of the original personal notes. */
 export const en: Record<string, string> = {
+  "Logos locais: Wikimedia Commons e Formula 1 (Ferrari). Fontes detalhadas em ASSET_SOURCES.md.": "Local logos: Wikimedia Commons and Formula 1 (Ferrari). Detailed sources in ASSET_SOURCES.md.",
+  COLLECTION: "COLLECTION",
+  STORAGE: "STORAGE",
+  "Visite todas as áreas.": "Visit every area.",
+  "08 / BROADCAST STATION": "08 / BROADCAST STATION",
+  "09 / BUSINESS DISTRICT": "09 / BUSINESS DISTRICT",
   "Classe:": "Class:",
   "SAVE SECRETO ENCONTRADO.": "SECRET SAVE FOUND.",
   "Você trouxe controles de outro jogo. Funcionou mesmo assim.":

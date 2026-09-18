@@ -5,18 +5,23 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc -b && vite build",
+    "build": "node scripts/check-assets.mjs && tsc -b && vite build && node scripts/check-assets.mjs --dist",
+    "assets:check": "node scripts/check-assets.mjs",
+    "assets:audit-deploy": "node scripts/audit-deployed-assets.mjs",
+    "test:assets": "node --test scripts/asset-integrity.test.mjs",
+    "test:production": "node scripts/verify-production.mjs",
     "lint": "eslint .",
     "preview": "vite preview --host 127.0.0.1",
     "assets:sports": "node scripts/fetch-sports-assets.mjs"
   },
   "dependencies": {
+    "lucide-react": "^0.468.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "lucide-react": "^0.468.0"
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.0",
+    "@playwright/test": "^1.63.0",
     "@types/node": "^24.0.0",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",

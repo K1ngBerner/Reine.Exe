@@ -6,6 +6,8 @@ import { t, useLocale } from "../i18n";
 import { navigation } from "../data/navigation";
 import type { Area } from "../data/types";
 import LinkCable from "../components/LinkCable";
+import SafeImage from "../components/SafeImage";
+import assets from "../data/assets.json";
 export default function HomePage({
   navigate,
   badges,
@@ -33,8 +35,8 @@ export default function HomePage({
             onClick={onPortrait}
             aria-label="Examinar Trainer Card"
           >
-            <img
-              src="assets/profile/reine-profile.png"
+            <SafeImage
+              src={assets.profile}
               alt="Reine em pixel art cercado por seus Pokémon"
               width="1254"
               height="1254"
@@ -107,7 +109,7 @@ export default function HomePage({
             {navigation.slice(2).map(({ id, name, place }, i) =>
               translateTree(
                 <button key={id} onClick={() => navigate(id)}>
-                  <small>0{i + 2}</small>
+                  <small>0{i + 3}</small>
                   <span>{place}</span>
                   <strong>{name}</strong>
                   <ArrowUpRight size={15} />

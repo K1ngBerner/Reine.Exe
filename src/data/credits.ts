@@ -22,7 +22,7 @@ export const credits = [
   },
   {
     asset: "SPORTS MARKS",
-    credit: "Ícones locais de times/equipes obtidos de páginas do Wikimedia Commons; fontes detalhadas em ASSET_SOURCES.md.",
+    credit: "Logos locais: Wikimedia Commons e Formula 1 (Ferrari). Fontes detalhadas em ASSET_SOURCES.md.",
     url: "https://commons.wikimedia.org/wiki/Category:Sports_logos",
   },
   {
